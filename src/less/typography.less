@@ -1,0 +1,46 @@
+/* --------------------------------------------------------------------------
+                        TYPOGRAPHY
+ ---------------------------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: @font-family-headings;
+  font-weight: 600;
+  line-height: @line-height-150;
+  color: @headings-color;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1 {
+  font-size: @font-size-900;
+}
+
+h2 {
+  font-size: @font-size-700;
+}
+
+h3 {
+  font-size: @font-size-600;
+}
+
+h4 {
+  font-size: @font-size-500;
+}
+
+p {
+  margin: 0;
+  & + p {
+    margin-top: @font-size-500 * 3/8;
+  }
+}
+
+.lead {
+  font-weight: 600;
+  line-height: @line-height-150 * 1.2;
+}

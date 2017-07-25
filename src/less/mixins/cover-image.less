@@ -1,0 +1,7 @@
+.cover-image(@url, @offset) {
+  background: url(@url) no-repeat;
+  background-size: contain;
+  width: 100%;
+  height: 0;
+  padding-top: percentage(image-height(@url) / image-width(@url));
+}
