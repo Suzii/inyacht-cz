@@ -12,7 +12,10 @@ function swallowError (error) {
 }
 
 gulp.task('pug', function(){
-    gulp.src(['src/pug/index.pug'])
+    gulp.src([
+        'src/pug/pages/*.pug',
+        'src/pug/pages/jachting/*.pug'
+    ])
         .pipe(pug({pretty: true}))
         .on('error', swallowError)
         .pipe(gulp.dest(OUTPUT_DIR))
