@@ -1,44 +1,7 @@
-/* ==================================================================== */
-/* =========================== SCAFFOLDING ============================ */
-/* ==================================================================== */
-@link-hover-color: @blue-900;
-@link-hover-decoration: 'underline';
-
 body {
-  font-family: @font-family-base;
-  font-size: @font-size-500;
-  line-height: @line-height-150;
-  color: @text-color;
-  background-color: @body-bg;
-  padding-top: @nav-bar-height;
+  padding-top: @navbar-height;
 }
-
-input,
-button,
-select,
-textarea {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-a {
-  color: @link-color;
-  text-decoration: none;
-  cursor: pointer;
-
-  &:hover,
-  &:focus {
-    color: @link-hover-color;
-    text-decoration: @link-hover-decoration;
-  }
-}
-
-img {
-  vertical-align: middle;
-}
-
 
 .cover-image {
-  .cover-image("../../img/about_us_cover.jpg", @nav-bar-height);
+  .cover-image("../../img/about_us_cover.jpg", @navbar-height);
 }
