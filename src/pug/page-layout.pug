@@ -1,10 +1,13 @@
 extends html-layout
+include mixins/navLink
 append styles
     // Custom styles for this template
     link(href="./css/bootstrap/dashboard.css", rel="stylesheet")
     link(href="./css/bootstrap/index.css", rel="stylesheet")
 
 block body
+    block globals
+
     nav.navbar.navbar-default.navbar-fixed-top
         .container
             .navbar-header
@@ -17,11 +20,9 @@ block body
                     img(alt="inYacht", src="img/logo-small.png")
             #navbar.navbar-collapse.collapse
                 ul.nav.navbar-nav.navbar-right
-                    li
-                        a(href="./index.html") O nás
-                    li
-                        a(href="./vyhledavac.html") Online vyhledávač
-                    li(class="dropdown")
+                    +navLink("./index.html", "index", "O nás")
+                    +navLink("./vyhledavac.html", "vyhledavac", "Online vyhledávač")
+                    li(class={dropdown: true, active: "jachting" === currentRoute})
                         a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
                             | Námořní jachting
                             span.caret
@@ -35,9 +36,7 @@ block body
                                 a(href="destinace.html") Oblíbené destinace
                             li
                                 a(href="pocasi.html") Počasí na moři
-                    li
-                        a(href="kurzy.html") Kapitánske kurzy
-                    li
-                        a(href="kontakt.html") Kontakt
+                    +navLink("./kurzy.html", "kurzy", "Kapitánske kurzy")
+                    +navLink("./kontakt.html", "kontakt", "Kontakt")
 
     block content

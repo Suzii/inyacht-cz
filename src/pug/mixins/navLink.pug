@@ -1,0 +1,3 @@
+mixin navLink(link, routeName, name)
+    li(class={active: routeName === currentRoute})
+        a(href=link) #{name}
