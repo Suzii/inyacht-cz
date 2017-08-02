@@ -1,0 +1,132 @@
+a,
+a:focus,
+a:hover {
+  color: #333;
+}
+
+html,
+body {
+  height: 100%;
+  //background-color: #ffdb0b;
+  background: repeating-linear-gradient(
+    -45deg,
+    #222,
+    #222 10%,
+    #ff8d30  10%,
+    #ff8d30  90%
+  );
+}
+
+body {
+  color: #222;
+  text-align: center;
+  text-shadow: 0 1px 3px rgba(0,0,0,.5);
+}
+
+/* Extra markup and styles for table-esque vertical and horizontal centering */
+.site-wrapper {
+  display: table;
+  width: 100%;
+  height: 100%; /* For at least Firefox */
+  min-height: 100%;
+  -webkit-box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+  box-shadow: inset 0 0 100px rgba(0,0,0,.5);
+}
+.site-wrapper-inner {
+  display: table-cell;
+  vertical-align: top;
+}
+.cover-container {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.logo {
+  max-height: 10rem;
+}
+
+.cover {
+  padding: 0 20px;
+  a {
+    color: #333;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.lead {
+  font-size: 2.3rem;
+  margin: 1rem;
+}
+
+.contact {
+  font-size: 1.5rem;
+  margin: 4rem;
+}
+
+/*
+ * Footer
+ */
+
+.mastfoot {
+  padding-bottom: 3rem;
+  color: #555; /* IE8 proofing */
+  a {
+    color: #333;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+
+/*
+ * Affix and center
+ */
+@media (max-width: 767px) {
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 768px) {
+  /* Pull out the header and footer */
+  //.masthead {
+  //  position: fixed;
+  //  top: 0;
+  //}
+  .mastfoot {
+    position: fixed;
+    bottom: 0;
+  }
+  /* Start the vertical centering */
+  .site-wrapper-inner {
+    vertical-align: middle;
+  }
+  /* Handle the widths */
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 100%; /* Must be percentage or pixels for horizontal alignment */
+  }
+}
+
+@media (min-width: 992px) {
+  .masthead,
+  .mastfoot,
+  .cover-container {
+    width: 700px;
+  }
+}
