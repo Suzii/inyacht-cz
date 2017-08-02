@@ -1,12 +1,11 @@
 extends ../page-layout
+include ../mixins/coverImage
 
 block globals
     - var currentRoute = "kurzy"
 
 block content
-    .container-fluid
-        .row
-            .col-sm-12.cover-image
+    +coverImage("/img/captain_cover.jpg", "Captain cover image.")
 
     .container
         .row

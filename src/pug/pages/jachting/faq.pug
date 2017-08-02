@@ -1,12 +1,11 @@
 extends ../../page-layout
+include ../../mixins/coverImage
 
 block globals
     - var currentRoute = "jachting"
 
 block content
-    .container-fluid
-        .row
-            .col-sm-12.cover-image
+    +coverImage("/img/faq_cover.jpg", "Caste otazky cover image.")
 
     .container
         .row

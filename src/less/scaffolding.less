@@ -1,7 +1,13 @@
 body {
   padding-top: @navbar-height;
+
+  .no-padding {
+    padding: 0;
+  }
 }
 
 .cover-image {
-  .cover-image("../../img/about_us_cover.jpg", @navbar-height);
+  img {
+    width: 100%;
+  }
 }

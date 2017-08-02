@@ -35,7 +35,7 @@ gulp.task('browser-sync', ['less', 'pug'], function () {
         server: {
             baseDir: OUTPUT_DIR,
             notify: true,
-            serveStatic: ['.', './img'],
+            serveStatic: ['.', '/img'],
             serveStaticOptions: {
                 extensions: ['html']
             }
@@ -43,14 +43,15 @@ gulp.task('browser-sync', ['less', 'pug'], function () {
     });
 });
 
-gulp.task('watch', function () {
-    gulp.watch(['src/less/**/*.less'], ['less']);
-    gulp.watch(['src/pug/**/*.pug'], ['pug']);
-});
-
 gulp.task('copy-assets', function () {
     gulp.src('./img/**/*')
         .pipe(gulp.dest(OUTPUT_DIR + '/img'))
+});
+
+gulp.task('watch', function () {
+    gulp.watch(['src/less/**/*.less'], ['less']);
+    gulp.watch(['src/pug/**/*.pug'], ['pug']);
+    gulp.watch(['img/**/*'], ['copy-assets']);
 });
 
 gulp.task('start', ['browser-sync', 'watch']);
