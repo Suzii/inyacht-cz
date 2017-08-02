@@ -43,4 +43,10 @@ gulp.task('watch', function(){
     gulp.watch(['src/pug/**/*.pug'], ['pug']);
 });
 
-gulp.task('default', ['browser-sync', 'watch']);
+gulp.task('copy-assets', function() {
+    gulp.src('./img/**/*')
+        .pipe(gulp.dest(OUTPUT_DIR + '/img'))
+});
+
+gulp.task('start', ['browser-sync', 'watch']);
+gulp.task('deploy', ['copy-assets', 'less', 'pug']);
