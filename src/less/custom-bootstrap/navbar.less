@@ -1,0 +1,102 @@
+// ============================ CUSTOM ======================
+.navbar {
+  text-transform: uppercase;
+  min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
+  -webkit-transition: all @navbar-transition-period ease;
+  transition: all @navbar-transition-period ease;
+
+  .navbar-shrink& {
+    min-height: @navbar-height-shrinked !important;
+  }
+
+  .navbar-header {
+    max-height: @navbar-height;
+    -webkit-transition: all @navbar-transition-period ease;
+    transition: all @navbar-transition-period ease;
+
+    .navbar-shrink & {
+      max-height: @navbar-height-shrinked;
+    }
+  }
+}
+
+// Brand/project name
+.navbar-brand {
+  padding: 0.6rem;
+  height: @navbar-height;
+  -webkit-transition: all @navbar-transition-period ease;
+  transition: all @navbar-transition-period ease;
+
+  > img {
+    display: block;
+    height: @navbar-height * 0.8;
+    -webkit-transition: all @navbar-transition-period ease;
+    transition: all @navbar-transition-period ease;
+
+  }
+
+  .navbar-shrink & {
+    padding: 0.3rem;
+    height: @navbar-height-shrinked;
+
+    > img {
+      display: block;
+      height: @navbar-height-shrinked * 0.8;
+      padding: 0.0rem;
+    }
+  }
+
+}
+
+// Navbar nav links
+//
+// Builds on top of the `.nav` components with its own modifier class to make
+// the nav the full height of the horizontal nav (above 768px).
+
+.navbar-nav {
+  //margin: (@navbar-padding-vertical / 2) -@navbar-padding-horizontal;
+
+  > li > a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: @line-height-computed;
+  }
+
+  // Uncollapse the nav
+  @media (min-width: @grid-float-breakpoint) {
+    float: left;
+    margin: 0;
+
+    > li {
+      float: left;
+      > a {
+        padding-top: @navbar-padding-vertical;
+        padding-bottom: @navbar-padding-vertical;
+        -webkit-transition: all @navbar-transition-period ease;
+        transition: all @navbar-transition-period ease;
+
+        .navbar-shrink & {
+          padding-top: @navbar-padding-vertical-shrinked;
+          padding-bottom: @navbar-padding-vertical-shrinked;
+        }
+      }
+    }
+  }
+}
+
+.navbar-vertical-align(@navbar-height-local, @element-height) {
+  margin-top: ((@navbar-height-local - @element-height) / 2);
+  margin-bottom: ((@navbar-height-local - @element-height) / 2);
+}
+
+
+.navbar-toggle {
+  .navbar-vertical-align(@navbar-height, 34px);
+  -webkit-transition: all @navbar-transition-period ease;
+  transition: all @navbar-transition-period ease;
+
+  .navbar-shrink & {
+    .navbar-vertical-align(@navbar-height-shrinked, 34px);
+  }
+}
+

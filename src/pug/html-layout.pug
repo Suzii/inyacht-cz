@@ -1,18 +1,27 @@
 doctype html
 html(lang="en")
-	head
-		meta(charset="UTF-8")
-		meta(http-equiv="X-UA-Compatible", content="IE=edge")
-		meta(name="viewport", content="width=device-width, initial-scale=1")
-		meta(name="description", content="TODO")
-		meta(name="author", content="Suzii")
-		link(rel="icon", href="favicon.ico")
-		title
-		block styles
-			link(rel="stylesheet", href="css/styles.css")
-	body(data-spy="scroll", data-target=".scrollspy")
-		block body
-			
-		block scripts
-			script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
-			script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        meta(name="description", content="TODO")
+        meta(name="author", content="Suzii")
+        link(rel="icon", href="/img/favicon.ico", type="image/x-icon")
+        link(rel="shortcut icon", href="/img/favicon.ico", type="image/x-icon")
+        title
+        block styles
+            link(rel="stylesheet", href="css/styles.css")
+    body(data-spy="scroll", data-target=".scrollspy")
+        block body
+
+        block scripts
+            script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
+            script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+            script.
+                $(window).scroll(function () {
+                    if ($(document).scrollTop() > 80) {
+                        $('nav').addClass('navbar-shrink');
+                    } else {
+                        $('nav').removeClass('navbar-shrink');
+                    }
+                });
