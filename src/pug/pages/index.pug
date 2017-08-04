@@ -5,7 +5,9 @@ block globals
     - var currentRoute = "index"
 
 block content
-    +coverImage("/img/about_us_cover.jpg", "About us cover image.")
+    .container-fluid.no-padding
+        .cover-video
+            video(src="/video/cover.mp4" type="video/mp4" preload="auto" autoplay poster="/video/cover-poster.jpg")
 
     .container
         .row
