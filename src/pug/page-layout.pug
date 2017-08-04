@@ -22,10 +22,10 @@ block body
             #navbar.navbar-collapse.collapse
                 ul.nav.navbar-nav.navbar-right
                     +navLink("./index", "index", "O nás")
-                    +navLink("./vyhledavac", "vyhledavac", "Online vyhledávač")
+                    +navLink("./vyhledavac", "vyhledavac", "Vyhledávač")
                     li(class={dropdown: true, active: "jachting" === currentRoute})
                         a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
-                            | Námořní jachting
+                            | Jachting
                             span.caret
 
                         ul.dropdown-menu
