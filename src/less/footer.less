@@ -1,17 +1,83 @@
+@main-footer-color: @primary-color;
+@main-footer-font-color-lighter: @blue-200;
+@main-footer-font-color: darken(@main-footer-font-color-lighter, 10%);
+@main-footer-font-color-darker: darken(@main-footer-font-color, 10%);
+@secondary-footer-color: @blue-900;
+@secondary-footer-font-color: @blue-300;
+
 .footer {
-    margin-top: 2rem;
+  margin-top: 2rem;
 
-  .container {
-    width: 100%;
+  .sitemap-row {
+    display: flex;
+
+    .logo-container {
+      display: flex;
+      justify-content: space-between;
+      align-self: stretch;
+      flex-direction: column-reverse;
+
+      .logo {
+        max-height: 10rem;
+        align-self: flex-end;
+        //vertical-align: bottom;
+      }
+    }
+  }
+  
+  .site-info {
     padding: 2rem;
-    background-color: @blue-600;
-    color: @blue-200;
+    background-color: @main-footer-color;
+    color: @main-footer-font-color;
+    h1, h2, h3 {
+      color: @main-footer-font-color-lighter;
+    }
 
-    &.copyright {
-      line-height: 1rem;
-      text-align: center;
-      background-color: @blue-900;
-      color: @blue-200;
+    h4, h5, h6 {
+      color: @main-footer-font-color-lighter;
+    }
+
+    a {
+      color: @main-footer-font-color;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .sitemap {
+      @media (min-width: @grid-float-breakpoint) {
+        border-right: 1px solid @main-footer-font-color;
+      }
+
+      @media (max-width: @grid-float-breakpoint-max) {
+        border-bottom: 1px solid @main-footer-font-color;
+        padding-bottom: @grid-gutter-width / 2;
+      }
+
+      li {
+        //padding-left: 2rem;
+        a {
+          color: @main-footer-font-color-darker;
+        }
+      }
+
+    }
+
+    .contact {
+    }
+  }
+
+  .copyright {
+    padding-top: 2rem;
+    padding-bottom: 0.5rem;
+    line-height: 1rem;
+    text-align: center;
+    background-color: @secondary-footer-color;
+    color: @secondary-footer-font-color;
+
+    a {
+      color: @secondary-footer-font-color;
     }
   }
 }

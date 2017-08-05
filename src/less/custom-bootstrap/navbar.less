@@ -2,8 +2,8 @@
 .navbar {
   text-transform: uppercase;
   min-height: @navbar-height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
-  -webkit-transition: all @navbar-transition-period ease;
-  transition: all @navbar-transition-period ease;
+  -webkit-transition: max-height @navbar-transition-period ease;
+  transition: max-height @navbar-transition-period ease;
 
   .navbar-shrink& {
     min-height: @navbar-height-shrinked !important;
@@ -11,8 +11,8 @@
 
   .navbar-header {
     max-height: @navbar-height;
-    -webkit-transition: all @navbar-transition-period ease;
-    transition: all @navbar-transition-period ease;
+    -webkit-transition: max-height @navbar-transition-period ease;
+    transition: max-height @navbar-transition-period ease;
 
     .navbar-shrink & {
       max-height: @navbar-height-shrinked;
@@ -24,14 +24,14 @@
 .navbar-brand {
   padding: 0.6rem;
   height: @navbar-height;
-  -webkit-transition: all @navbar-transition-period ease;
-  transition: all @navbar-transition-period ease;
+  -webkit-transition: height @navbar-transition-period ease;
+  transition: height @navbar-transition-period ease;
 
   > img {
     display: block;
     height: @navbar-height * 0.8;
-    -webkit-transition: all @navbar-transition-period ease;
-    transition: all @navbar-transition-period ease;
+    -webkit-transition: height @navbar-transition-period ease;
+    transition: height @navbar-transition-period ease;
 
   }
 
@@ -72,8 +72,8 @@
       > a {
         padding-top: @navbar-padding-vertical;
         padding-bottom: @navbar-padding-vertical;
-        -webkit-transition: all @navbar-transition-period ease;
-        transition: all @navbar-transition-period ease;
+        -webkit-transition: padding @navbar-transition-period ease;
+        transition: padding @navbar-transition-period ease;
 
         .navbar-shrink & {
           padding-top: @navbar-padding-vertical-shrinked;

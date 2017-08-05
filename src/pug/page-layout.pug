@@ -1,11 +1,6 @@
 extends html-layout
 include mixins/navLink
 
-append styles
-    // Custom styles for this template
-    link(href="./css/bootstrap/dashboard.css", rel="stylesheet")
-    link(href="./css/bootstrap/index.css", rel="stylesheet")
-
 block body
     block globals
 
@@ -17,11 +12,11 @@ block body
                     span.icon-bar
                     span.icon-bar
                     span.icon-bar
-                a.navbar-brand(href="index")
+                a.navbar-brand(href="/")
                     img(alt="inYacht", src="img/logo-small.png")
             #navbar.navbar-collapse.collapse
                 ul.nav.navbar-nav.navbar-right
-                    +navLink("./index", "index", "O nás")
+                    +navLink("./", "index", "O nás")
                     +navLink("./vyhledavac", "vyhledavac", "Vyhledávač")
                     li(class={dropdown: true, active: "jachting" === currentRoute})
                         a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
@@ -43,19 +38,56 @@ block body
     block content
 
     footer.footer
-        .container
-            .row
-                .col-md-4.col-sm-6
-                    p O nás
-                .col-md-4.col-sm-6
-                    p Námořní jachting
-                .col-md-4.col-sm-6
-                    p Kontakt
+        .site-info#site-info
+            .container
+                .row
+                    .col-md-6.col-sm-6.col-xs-12.sitemap#sitemap
+                        .row.sitemap-row
+                            .col-sm-6.col-xs-6
+                                h4
+                                    a(href="/") O nás
+                                h4
+                                    a(href="./vyhledavac") Vyhledávač
+                                h4
+                                    a(href="./kurzy") Kapitánske kurzy
+                                h4
+                                    a(href="./faq") Námořní jachting
+                                h4
+                                    a(href="./kontakt") Kontakt
+                            .col-sm-6.col-xs-6.logo-container.hidden-xs
+                                img.logo(src="/img/footer-logo.png")
+                                //ul.list-unstyled
+                                //    li
+                                //        h5
+                                //            a(href="./faq") Časté otázky
+                                //    li
+                                //        h5
+                                //            a(href="./novinky") Novinky
+                                //    li
+                                //        h5
+                                //            a(href="./destinace") Oblíbené destinace
+                                //    li
+                                //        h5
+                                //            a(href="./pocasi") Počasí na moři
 
-        .container.copyright
-            .row
-                .col-sm-12
+                    .col-md-6.col-sm-6.col-xs-12.contact#contact
+                        .row
+                            .col-sm-6
+                                h4 Kontaktujte nás
+                                p
+                                    a(href="mailto:charter@inyacht.cz").email charter@inyacht.cz
 
-                        p Developed by
-                        p
-                            b @Suzii
+                            .col-sm-6
+                                h4.hidden-xs Odebírejte novinky
+                                p
+                                    a(href="TODO") Facebook&nbsp;|&nbsp;
+                                    a(href="TODO") Instagram
+
+        .copyright#copyright
+            .container
+                .row
+                    .col-sm-12
+                            p Developed by
+                            p
+                                b
+                                    a(href="mailto:admin@inyacht.cz") @Suzii
