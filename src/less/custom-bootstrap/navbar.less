@@ -45,7 +45,6 @@
       padding: 0.0rem;
     }
   }
-
 }
 
 // Navbar nav links
@@ -54,14 +53,6 @@
 // the nav the full height of the horizontal nav (above 768px).
 
 .navbar-nav {
-  //margin: (@navbar-padding-vertical / 2) -@navbar-padding-horizontal;
-
-  > li > a {
-    padding-top: 10px;
-    padding-bottom: 10px;
-    line-height: @line-height-computed;
-  }
-
   // Uncollapse the nav
   @media (min-width: @grid-float-breakpoint) {
     float: left;
@@ -89,7 +80,6 @@
   margin-bottom: ((@navbar-height-local - @element-height) / 2);
 }
 
-
 .navbar-toggle {
   .navbar-vertical-align(@navbar-height, 34px);
   -webkit-transition: all @navbar-transition-period ease;
@@ -100,3 +90,37 @@
   }
 }
 
+// ===== open navbar colors ======
+.navbar-inverse {
+  .navbar-nav {
+    @media (min-width: @grid-float-breakpoint) {
+      .open .dropdown-menu {
+        background-color: @navbar-inverse-bg;
+        > li > a {
+          color: @navbar-inverse-link-color;
+          &:hover,
+          &:focus {
+            color: @navbar-inverse-link-hover-color;
+            background-color: @navbar-inverse-link-hover-bg;
+          }
+        }
+        > .active > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-inverse-link-active-color;
+            background-color: @navbar-inverse-link-active-bg;
+          }
+        }
+        > .disabled > a {
+          &,
+          &:hover,
+          &:focus {
+            color: @navbar-inverse-link-disabled-color;
+            background-color: @navbar-inverse-link-disabled-bg;
+          }
+        }
+      }
+    }
+  }
+}
