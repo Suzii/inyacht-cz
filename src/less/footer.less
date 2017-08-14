@@ -1,9 +1,17 @@
 @main-footer-color: @primary-color;
-@main-footer-font-color-lighter: @blue-200;
-@main-footer-font-color: darken(@main-footer-font-color-lighter, 10%);
+@main-footer-font-color-lighter: @white;
+@main-footer-font-color: darken(@main-footer-font-color-lighter, 5%);
 @main-footer-font-color-darker: darken(@main-footer-font-color, 10%);
 @secondary-footer-color: @blue-900;
 @secondary-footer-font-color: @blue-300;
+
+//@main-footer-color: @blue-900;
+//@main-footer-font-color: @primary-color;
+//@main-footer-font-color-lighter: lighten(@main-footer-font-color, 5%);
+//@main-footer-font-color-darker: darken(@main-footer-font-color, 10%);
+//@secondary-footer-color: darken(@blue-900, 10%);
+//@secondary-footer-font-color: @primary-color;
+
 
 .footer {
   margin-top: 2rem;
@@ -78,6 +86,9 @@
 
     a {
       color: @secondary-footer-font-color;
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 }
