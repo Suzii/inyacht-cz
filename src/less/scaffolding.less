@@ -7,9 +7,22 @@ body {
 }
 
 .cover-image {
-  img {
-    width: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40% 50%;
+  min-height: 380px;
+
+  @media (max-width: @screen-xs-max) {
+    max-height: 100px;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    max-height: 206px;
+  }
+
+  @media (max-width: @screen-md-max) {
     max-height: 400px;
+    min-height: 258px;
   }
 }
 
