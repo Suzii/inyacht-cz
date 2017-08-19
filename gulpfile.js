@@ -44,8 +44,13 @@ gulp.task('browser-sync', ['less', 'pug'], function () {
 });
 
 gulp.task('copy-assets', function () {
+    console.log('Copying images...');
     gulp.src('./img/**/*')
-        .pipe(gulp.dest(OUTPUT_DIR + '/img'))
+        .pipe(gulp.dest(OUTPUT_DIR + '/img'));
+
+    console.log('Copying fonts...');
+    gulp.src('./src/fonts/*')
+        .pipe(gulp.dest(OUTPUT_DIR + '/fonts'));
 });
 
 gulp.task('watch', function () {
@@ -54,5 +59,5 @@ gulp.task('watch', function () {
     gulp.watch(['img/**/*'], ['copy-assets']);
 });
 
-gulp.task('start', ['browser-sync', 'watch']);
+gulp.task('start', ['browser-sync', 'copy-assets', 'watch']);
 gulp.task('deploy', ['copy-assets', 'less', 'pug']);
