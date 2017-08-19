@@ -1,0 +1,39 @@
+.cover-image {
+  position: relative;
+  h1 {
+    position: absolute;
+    bottom: 2rem;
+    left: 5rem;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 1rem 1rem;
+    color: white;
+    margin: 0;
+  }
+
+
+
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 40% 50%;
+  min-height: 380px;
+
+  @media (max-width: @screen-xs-max) {
+    max-height: 100px;
+  }
+
+  @media (max-width: @screen-sm-max) {
+    max-height: 206px;
+  }
+
+  @media (max-width: @screen-md-max) {
+    max-height: 400px;
+    min-height: 258px;
+  }
+}
+
+.cover-video {
+  video {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,5 +1,6 @@
 extends ../../page-layout
 include ../../mixins/coverImage
+include ../../mixins/faq
 
 block globals
     - var currentRoute = "jachting"
@@ -11,17 +12,67 @@ block content
         .row
             .col-sm-12
                 h1.page-header Časté otázky
-                p.lead Chcete zazit nezapomenutelnou dovolenou? Ste tady spravne!
+                p.lead Víří Vám hlavou nespočet otázek ohledně toho, jak to vlastně všechno s tou dovolenou na moři funguje?
+                p Podívejte se na těch nejčastějších 15 dotazů, které jsme pro Vás detailně zodpověděli. Pokud se ale budete chtít zeptat na cokoliv jiného, neváhejte nás prosím kontaktovat – ať už emailem, telefonem nebo na Facebooku. Budeme se těšit!
 
         .row
             .col-sm-12
-                p.lead
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                p
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                ol.faq-list
+                    li.faq-list__item
+                        +faq("Kam se nejčastěji jezdí?", "#kam-se-nejcasteji-jezdi")
+                        div.faq-list__item--answer.faq-list__item--answer-collapsed
+                            p Statisticky nejoblíbenější jachtařskou destinací je pro Čechy Jadran s výchozím přístavem v Chorvatsku. To je populární hned z několika důvodů – lodí tam je bezkonkurenčně nejvíc, takže si můžete opravdu vybírat podle toho, jestli chcete ušetřit nebo si naopak dopřát luxus lednice na šampaňské na palubě, je to blízko, domluvíte se zde skoro i česky, a hlavně je chorvatské pobřeží prostě nádherné.
+                            p Další oblíbené destinace jsou potom Itálie a Řecko. Pokud by chtěl někdo zažít severské plachtění, první destinací je většinou německý Balt a Rujána, často se ale jezdí i do Norska a Švédska. Anglie, Irsko a oblast francouzského Biskaje jsou potom považovány za ty nejnáročnější vody, jejichž zvládnutí potom přináší opravdové potěšení. A v posledních letech stále více roste popularita exotických destinací jako Thajsko nebo Karibik.
+                            p Více si o jednotlivých destinacích a o tom, pro koho jsou nebo nejsou vhodné a kdy, můžete přečíst <a href="/destinace">zde</a>.
 
-                p
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
-                p
-                    | Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    li.faq-list__item
+                        +faq("Vyjde mě dovolená na plachetnici o hodně dráž než v hotelu ?", "#hotel-vs-plachetnice")
+                        div.faq-list__item--answer.faq-list__item--answer-collapsed
+                            p Tady pro Vás máme dobrou zprávu – stejně jako u klasické suchozemské dovolené záleží jenom na Vás, kolik budete chtít investovat. Největší položkou je pronájem plachetnice. Ceny se liší jak v průběhu roku, tak typ od typu (hlavní faktory jsou velikost a stáří).
+                            p Za hlavní sezónu je považován červenec a srpen, kdy jsou lodě dražší než v květnu, červnu, září a říjnu. Pokud dáte dohromady posádky o osmi lidech, dá se však i v těchto sezónních měsících například v Chorvatsku najít taková loď, aby Vás pronájem vyšel na 7 000,- Kč na osobu.
+                            p Dalším výdajem jsou poplatky za kotvení. Pokud budete nocovat v opuštěné zátoce na kotvě, nikdo po Vás nic chtít nebude. Další variantou jsou bojky, na kterých se každý večer vybírá poplatek. Běžná čtyřicetistopá plachetnice (více o typech plachetnic zde) (link) za jednu noc zaplatí většinou cca 360 kun, tedy necelých 200,- na osobu při naší modelové osmičlenné posádce. Nejdražší variantou je stání v marině u mola – to je přibližně o třetinu dražší než bojky, ale na druhou stranu Vám dopřeje pohodlí obchodů, restaurací, sociálních zařízení, elektřiny a podobně.
+                            p Například v květnu potom stejnou plachetnici při stejném počtu osob seženete za 4 000,- Kč na osobu, poplatky za bojky a mariny jsou také úměrně lacinější.
+                            p Potom už je na jaře i v létě jenom na Vás, kolik na dovolené projíte a propijete, zda si doma zavaříte do sklenic, a nebo budete každý večer degustovat místní kuchyni v hospůdkách na ostrovech. Doprava je také na Vás – jestli se rozdělíte ve čtyřech o náklady na auto nebo zvolíte let do Splitu.
+                            p Více o tom, kdy je nejlepší vyrazit, zjistíte zde. (odkaz na otázku Kdy jezdit na moře?)
+
+                    li.faq-list__item
+                        +faq("Jak se můžu stát kapitánem, kolik mě to bude stát a jak dlouho to bude trvat ?", "#jak-se-stat-kapitanem")
+                        div.faq-list__item--answer.faq-list__item--answer-collapsed
+                            p Jsou dva základní typy kapitánských průkazů, mezi kterými nováčci z české jachtařské veřejnosti nejčastěji volí. Krátký přehled by se dal shrnout takto:
+                            ol.list-roman
+                                li Chorvatský kapitánský průkaz Voditelj Brodica vydávaný chorvatským Ministerstvem Pomorstva:
+                                    | Plusy:
+                                    ul
+                                        li Jeho získání je velmi jednoduché, jedná se pouze o krátkou ústní zkoušku na jednom z chorvatských kapitanátů, absolvování praxe není povinné (přesto Vám ho však doporučujeme)
+                                        li Má neomezenou platnost
+                                        li Pokrývá lodě až do XYZ metrů délky
+                                    | Mínusy:
+                                    ul
+                                        li Platí pouze v chorvatských vodách
+                                        li Jelikož mu nepředchází žádná praxe, je díky nim chorvatské moře plné nezodpovědných dobrodruhů, kteří zkoušku úspěšně složili s nulovou nebo minimální praxí a zkušenostmi s reálným vedením plachetnice
+
+
+
+
+block append scripts
+    script.
+        function toggleAnswer() {
+            console.log('expand: ', this);
+            var $icon = $(this).find('i');
+            console.log('icon', $icon)
+            $icon.toggleClass('glyphicon-chevron-down').toggleClass('glyphicon-chevron-up');
+            $(this).closest('.faq-list__item').find('.faq-list__item--answer').toggle(500);//.toggleClass('faq-list__item--answer-collapsed').toggleClass('faq-list__item--answer-expanded');
+        }
+
+        $(document).ready(function() {
+            console.log('init collapsing');
+            $('.faq-list__item--question').click(toggleAnswer);
+
+            var hash = window.location.hash;
+            var $item = $('.faq-list__item--question'+hash).first();
+            console.log($item)
+            if($item) {
+                $item.closest('.faq-list__item').find('.faq-list__item--answer').show();
+            }
+        });
