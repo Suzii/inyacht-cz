@@ -1,3 +1,7 @@
-import {alertyyy} from "./alert";
+import {deliveryClient} from "./deliver/deliveryClient"
+import {Faq} from "./models/Faq";
 
-alertyyy("Hello there!!!!");
+deliveryClient.items<Faq>()
+    .type('faq')
+    .get()
+    .subscribe(response => console.log(response));
