@@ -1,0 +1,1 @@
+fetch('https://deliver.kenticocloud.com/c93a27a6-8556-45f6-b5e0-6fa74415f3b2/items/page_covers')

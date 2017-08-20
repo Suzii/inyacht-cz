@@ -2,6 +2,9 @@ const gulp = require('gulp');
 const path = require('path');
 const pug = require('gulp-pug');
 const less = require('gulp-less');
+const webpack = require('webpack');
+const config = require('./webpack.config.js');
+const webpackStream = require('webpack-stream');
 const browserSync = require('browser-sync').create();
 
 const OUTPUT_DIR = './dist';
@@ -28,6 +31,12 @@ gulp.task('less', function () {
         .on('error', swallowError)
         .pipe(gulp.dest(OUTPUT_DIR + '/css'))
         .pipe(browserSync.reload({ stream: true }))
+});
+
+gulp.task('js', function() {
+    return gulp.src('src/js/index.ts')
+        .pipe(webpackStream(config, webpack))
+        .pipe(gulp.dest('dist/js/'));
 });
 
 gulp.task('browser-sync', ['less', 'pug'], function () {
@@ -60,4 +69,4 @@ gulp.task('watch', function () {
 });
 
 gulp.task('start', ['browser-sync', 'copy-assets', 'watch']);
-gulp.task('deploy', ['copy-assets', 'less', 'pug']);
+gulp.task('deploy', ['copy-assets', 'js', 'less', 'pug']);
