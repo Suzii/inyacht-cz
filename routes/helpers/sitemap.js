@@ -1,0 +1,86 @@
+const sitemap = {
+    // first level
+    index: {
+        id: 'index',
+        route: '/',
+        parentRouteId: null,
+        title: 'InYacht',
+        menuItem: 'InYacht',
+        children: [],
+    },
+    aboutUs: {
+        id: 'aboutUs',
+        route: 'o-nas',
+        parentRouteId: null,
+        title: 'O nás',
+        menuItem: 'O nás',
+        children: [],
+    },
+    search: {
+        id: 'search',
+        route: 'vyhledavac',
+        parentRouteId: null,
+        title: 'Vyhledávač',
+        menuItem: 'Vyhledávač',
+        children: [],
+    },
+    yachting: {
+        id: 'yachting',
+        route: 'jachting',
+        parentRouteId: null,
+        title: 'Námořní jachting',
+        menuItem: 'Námořní jachting',
+        children: ['destinations', 'faq', 'news', 'weather'],
+    },
+    courses: {
+        id: 'courses',
+        route: 'kapitanske-kurzy',
+        parentRouteId: null,
+        title: 'Kapitánske kurzy',
+        menuItem: 'Kapitánske kurzy',
+        children: [],
+    },
+    contact: {
+        id: 'contact',
+        route: 'kontakt',
+        parentRouteId: null,
+        title: 'Kontakt',
+        menuItem: 'Kontakt',
+        children: [],
+    },
+    // second level
+    destinations: {
+        id: 'destinations',
+        route: 'destinace',
+        parentRouteId: 'yachting',
+        title: 'Destinace',
+        menuItem: 'Destinace',
+        children: [],
+    },
+    faq: {
+        id: 'faq',
+        route: 'faq',
+        parentRouteId: 'yachting',
+        title: 'Faq',
+        menuItem: 'Faq',
+        children: [],
+    },
+    news: {
+        id: 'news',
+        route: 'novinky',
+        parentRouteId: 'yachting',
+        title: 'Novinky',
+        menuItem: 'Novinky',
+        children: [],
+    },
+    weather: {
+        id: 'weather',
+        route: 'pocasi',
+        parentRouteId: 'yachting',
+        title: 'Počasi',
+        menuItem: 'Počasí na moři',
+        children: [],
+    },
+};
+
+module.exports = sitemap;

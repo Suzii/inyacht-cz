@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const sitemap = require('./helpers/sitemap');
+const modelBuilder = require('./helpers/modelBuilder');
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('pages/index', { title: 'Express' });
+router.get('/' + sitemap.index.route, (req, res, next) => {
+  Promise.resolve().then(() => {
+    res.render('pages/index', modelBuilder(sitemap.index.id));
+  });
 });
 
 module.exports = router;

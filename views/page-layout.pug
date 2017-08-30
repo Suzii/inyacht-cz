@@ -16,26 +16,28 @@ block body
                     img(alt="inYacht", src="/img/logo-small.png")
             #navbar.navbar-collapse.collapse
                 ul.nav.navbar-nav.navbar-right
-                    +navLink("./onas", "onas", "O nás")
-                    +navLink("./vyhledavac", "vyhledavac", "Vyhledávač")
-                    li(class={dropdown: true, active: "jachting" === currentRoute})
+                    +navLink(sitemap.aboutUs)
+                    +navLink(sitemap.search)
+                    li(class={dropdown: true, active: sitemap.yachting.id === sitemap[currentRouteId].parentRouteId})
                         a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
-                            | Námořní jachting
+                            | #{sitemap.yachting.menuItem}
                             span.caret
 
                         ul.dropdown-menu
                             li
-                                a(href="faq") Časté otázky
+                                a(href=sitemap.faq.route) #{sitemap.faq.menuItem}
                             li
-                                a(href="novinky") Novinky
+                                a(href=sitemap.news.route) #{sitemap.news.menuItem}
                             li
-                                a(href="destinace") Oblíbené destinace
+                                a(href=sitemap.destinations.route) #{sitemap.destinations.menuItem}
                             li
-                                a(href="pocasi") Počasí na moři
-                    +navLink("./kurzy", "kurzy", "Kapitánske kurzy")
-                    +navLink("./kontakt", "kontakt", "Kontakt")
+                                a(href=sitemap.weather.route) #{sitemap.weather.menuItem}
+                    +navLink(sitemap.courses)
+                    +navLink(sitemap.contact)
 
     block content
+
+        #{sitemap}
 
     footer.footer
         .site-info#site-info
