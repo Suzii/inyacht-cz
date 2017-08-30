@@ -4,6 +4,9 @@
 # distributable
 dist/
 
+# public folder that should be always generated from src/
+public/
+
 # Logs
 logs
 *.log

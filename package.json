@@ -3,7 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "node ./bin/www"
+    "build": "gulp build",
+    "start": "node ./bin/www",
+    "start-dev": "set DEBUG=inyacht-cz:* &npm start",
+    "start-frontend": "gulp start-frontend",
+    "start-webpack": "gulp js"
   },
   "dependencies": {
     "body-parser": "~1.17.1",
@@ -13,5 +17,15 @@
     "morgan": "~1.8.1",
     "pug": "~2.0.0-beta11",
     "serve-favicon": "~2.4.2"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^3.2.3",
+    "gulp": "^3.9.1",
+    "gulp-less": "^3.3.0",
+    "gulp-watch": "^4.3.11",
+    "source-map-loader": "^0.2.1",
+    "typescript": "^2.4.2",
+    "webpack": "^3.5.5",
+    "webpack-stream": "^4.0.0"
   }
 }
