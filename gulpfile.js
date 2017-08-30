@@ -33,8 +33,8 @@ gulp.task('less', function () {
         .pipe(browserSync.reload({ stream: true }))
 });
 
-gulp.task('js', function() {
-    return gulp.src('src/js/index.ts')
+gulp.task('js-server', function() {
+    return gulp.src('src/server/index.ts')
         .pipe(webpackStream(config, webpack))
         .pipe(gulp.dest('dist/js/'));
 });

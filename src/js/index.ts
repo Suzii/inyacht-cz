@@ -1,5 +1,5 @@
-import {deliveryClient} from "./deliver/deliveryClient"
-import {Faq} from "./models/Faq";
+import {deliveryClient} from "../server/deliver/deliveryClient"
+import {Faq} from "../server/models/Faq";
 
 deliveryClient.items<Faq>()
     .type('faq')

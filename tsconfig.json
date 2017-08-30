@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "module": "commonjs",
-    "target": "es5",
-    "sourceMap": true
+    "target": "es6",
+    "sourceMap": true,
+    "module": "commonjs"
   },
   "include": [
-    "./src/js/**/*"
+    "./src/js/**/*",
+    "./src/server/**/*"
   ],
   "exclude": [
     "node_modules"
