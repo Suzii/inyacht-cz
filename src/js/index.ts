@@ -1,3 +1,1 @@
-import {alertyyy} from "./alert";
-
-alertyyy("Hello there!!!!");
+alert("Hello there!!!!");

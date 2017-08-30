@@ -55,7 +55,7 @@ gulp.task('js', function() {
 
 gulp.task('copy-assets', function () {
     console.log('Copying images...');
-    gulp.src('./img/**/*')
+    gulp.src('./assets/**/*')
         .pipe(gulp.dest(OUTPUT_DIR + '/img'));
 
     console.log('Copying fonts...');
@@ -71,4 +71,5 @@ gulp.task('watch', function () {
 
 // gulp.task('start', ['browser-sync', 'copy-assets', 'watch']);
 gulp.task('start-frontend', ['copy-assets', 'watch']);
+gulp.task('build-frontend', ['copy-assets', 'less', 'js']);
 // gulp.task('deploy', ['copy-assets', 'js', 'less', 'pug']);
