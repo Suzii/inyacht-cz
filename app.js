@@ -5,11 +5,7 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 
-const sitemap = require('./routes/helpers/sitemap');
-
-const indexRouter = require('./routes/index');
-const aboutUsRouter = require('./routes/about-us');
-const staticRouter = require('./routes/static');
+const staticRouter = require('./routes/index');
 
 const app = express();
 
@@ -26,10 +22,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // ======= controllers start =========
-app.use(sitemap.index.route, indexRouter);
-app.use('/', aboutUsRouter);
-app.use('/' + sitemap.aboutUs.route, aboutUsRouter);
-// default static routes
 app.use('/', staticRouter);
 // ======= controllers end =========
 

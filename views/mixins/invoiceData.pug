@@ -1,0 +1,11 @@
+mixin invoiceData(data)
+    address
+        strong #{data.companyName.value}
+        br
+        | #{data.addressStreet.value}
+        br
+        | #{data.addressCity.value}
+        br
+        | IČ: #{data.ic.value}
+        br
+        | DIČ: #{data.dic.value}

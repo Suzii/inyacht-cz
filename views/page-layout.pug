@@ -30,12 +30,10 @@ block body
                                 a(href=sitemap.destinations.route) #{sitemap.destinations.menuItem}
                             li
                                 a(href=sitemap.weather.route) #{sitemap.weather.menuItem}
-                    +navLink(sitemap.courses)
+                    //+navLink(sitemap.courses)
                     +navLink(sitemap.contact)
 
     block content
-
-        #{sitemap}
 
     footer.footer
         .site-info#site-info
@@ -52,8 +50,8 @@ block body
                                     a(href="./vyhledavac") Vyhledávač
                                 h4
                                     a(href="./faq") Námořní jachting
-                                h4
-                                    a(href="./kurzy") Kapitánske kurzy
+                                //h4
+                                //    a(href="./kurzy") Kapitánske kurzy
                                 h4
                                     a(href="./kontakt") Kontakt
                             .col-sm-6.col-xs-6.logo-container.hidden-xs

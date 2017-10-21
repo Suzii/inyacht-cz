@@ -1,5 +1,8 @@
+#custom
 # API keys
 secrets.js
+models/generated/**
+
 
 # IntelliJ
 .idea/

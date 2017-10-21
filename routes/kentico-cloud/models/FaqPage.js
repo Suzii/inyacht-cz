@@ -1,11 +1,11 @@
 const { ContentItem } = require('kentico-cloud-delivery-typescript-sdk');
 
-class Page extends ContentItem {
+class FaqPage extends ContentItem {
   // public pTitle: Fields.TextField;
   // public pLeadingParagraph: Fields.TextField;
   // public pCoverPhoto: Fields.AssetsField;
   // public pBody: Fields.RichTextField;
-  // public friendlyUrl: Fields.UrlSlugField;
+  // public faqs: IContentItem[];
 
   constructor() {
     super({
@@ -27,15 +27,11 @@ class Page extends ContentItem {
           return 'pBody';
         }
 
-        if (fieldName === 'friendly_url') {
-          return 'friendlyUrl';
-        }
-
         return fieldName;
       }),
-      linkResolver: (link) => link.type === 'page' ? link.url_slug : undefined,
+      linkResolver: (link) => link.type === 'faq_page' ? link.url_slug : undefined,
     })
   }
 }
 
-module.exports = Page;
+module.exports = FaqPage;

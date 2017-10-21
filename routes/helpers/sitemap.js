@@ -3,6 +3,7 @@ const sitemap = {
     index: {
         id: 'index',
         route: '/',
+        view: 'pages/index',
         parentRouteId: null,
         title: 'InYacht',
         menuItem: 'InYacht',
@@ -10,7 +11,8 @@ const sitemap = {
     },
     aboutUs: {
         id: 'aboutUs',
-        route: 'o-nas',
+        route: '/o-nas',
+        view: 'pages/about-us',
         parentRouteId: null,
         title: 'O nás',
         menuItem: 'O nás',
@@ -18,7 +20,8 @@ const sitemap = {
     },
     search: {
         id: 'search',
-        route: 'vyhledavac',
+        route: '/vyhledavac',
+        view: 'pages/search',
         parentRouteId: null,
         title: 'Vyhledávač',
         menuItem: 'Vyhledávač',
@@ -26,7 +29,8 @@ const sitemap = {
     },
     yachting: {
         id: 'yachting',
-        route: 'jachting',
+        route: '/jachting',
+        view: 'pages/yachting',
         parentRouteId: null,
         title: 'Námořní jachting',
         menuItem: 'Námořní jachting',
@@ -34,7 +38,8 @@ const sitemap = {
     },
     courses: {
         id: 'courses',
-        route: 'kapitanske-kurzy',
+        route: '/kapitanske-kurzy',
+        view: 'pages/courses',
         parentRouteId: null,
         title: 'Kapitánske kurzy',
         menuItem: 'Kapitánske kurzy',
@@ -42,7 +47,8 @@ const sitemap = {
     },
     contact: {
         id: 'contact',
-        route: 'kontakt',
+        route: '/kontakt',
+        view: 'pages/contact',
         parentRouteId: null,
         title: 'Kontakt',
         menuItem: 'Kontakt',
@@ -51,7 +57,8 @@ const sitemap = {
     // second level
     destinations: {
         id: 'destinations',
-        route: 'destinace',
+        route: '/destinace',
+        view: 'pages/yachting/destinations',
         parentRouteId: 'yachting',
         title: 'Destinace',
         menuItem: 'Destinace',
@@ -59,7 +66,8 @@ const sitemap = {
     },
     faq: {
         id: 'faq',
-        route: 'faq',
+        route: '/faq',
+        view: 'pages/yachting/faq',
         parentRouteId: 'yachting',
         title: 'Faq',
         menuItem: 'Faq',
@@ -67,7 +75,8 @@ const sitemap = {
     },
     news: {
         id: 'news',
-        route: 'novinky',
+        route: '/novinky',
+        view: 'pages/yachting/news',
         parentRouteId: 'yachting',
         title: 'Novinky',
         menuItem: 'Novinky',
@@ -75,7 +84,8 @@ const sitemap = {
     },
     weather: {
         id: 'weather',
-        route: 'pocasi',
+        route: '/pocasi',
+        view: 'pages/yachting/weather',
         parentRouteId: 'yachting',
         title: 'Počasi',
         menuItem: 'Počasí na moři',
