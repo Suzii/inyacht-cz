@@ -4,25 +4,18 @@ include ../mixins/coverImage
 block globals
 
 block content
-    +coverImage("https://assets.kenticocloud.com:443/c93a27a6-8556-45f6-b5e0-6fa74415f3b2/ab55df58-5dbb-4246-b7b9-cb16fe4611df/about_us_cover.jpg", "About us cover image.")
+    +coverImage(item.coverImage.url, item.coverImage.description)
 
     .container
         .row
             .col-sm-12
-                h1.page-header O nás
-                p.lead Ať už jste zkušení námořní vlci a na náš web jste zavítali v rámci výběru ideální lodě na Vaší další plavbu, nebo se chcete kapitány teprve stát, či pokud o moři a svých plánech zatím moc nevíte a pouze Vás myšlenka plachtění na moři zaujala – vy všichni jste tu správně.
+                h1.page-header #{item.title}
+                p.lead #{item.leadingParagraph}
 
 
         .row
             .col-sm-12
-                p
-                    | InYacht s.r.o. je dynamická česká společnost, která je plná lidí, jež mají s námořním jachtingem dlouholeté zkušenosti. Stal se pro nás vášní, kterou chceme předávat dál. Naší hlavní náplní je poskytování pronájmů charterových plachetnic po celém světě. Dále také organizujeme kapitánské kurzy, poskytujeme Vám kapitány na Vaše plavby, a pořádáme tematické přednášky a večery. V neposlední řadě Vám potom během Vašeho charteru poskytujeme špičkový servis. Budete-li potřebovat pravidelné informace o počasí nebo poradit s výběrem Vašeho dalšího kotviště, vše s Vámi ochotně vyřešíme. I když zavoláte ve tři ráno. Protože sami víme, jak to na moři funguje.
-                    |
-                p
-                    | Pokud byste si rádi vybrali svou loď, zvolte prosím záložku Online vyhledávač. Tam najdete všechny potřebné informace, jež Vás dovedou až na molo. Jestli jste rozhodnutí stát se kapitány, přečtěte si o různých možnostech v záložce Kapitánské kurzy. A pokud máte v hlavě spoustu otázek, podívejte se <a href="/faq">sem</a>, kde jsme pro Vás zodpověděli ty nejčastější.
-
-                p
-                    | A pokud vás zajímá cokoliv jiného, neváhejte nás kdykoliv <a href="kontakt">kontaktovat</a>. Budeme se těšit!
+                | !{item.text}
 
                 blockquote
                     p Moře dává člověku novou naději, stejně jako spánek dává nové sny.

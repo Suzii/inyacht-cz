@@ -5,9 +5,10 @@ const modelBuilder = require('./helpers/modelBuilder');
 
 /* GET home page. */
 router.get('/' + sitemap.index.route, (req, res, next) => {
-  Promise.resolve().then(() => {
-    res.render('pages/index', modelBuilder(sitemap.index.id));
-  });
+  Promise.resolve()
+    .then(() => {
+      res.render('pages/index', modelBuilder(sitemap.index.id));
+    });
 });
 
 module.exports = router;

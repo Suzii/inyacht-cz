@@ -4,13 +4,6 @@ const sitemap = require('./helpers/sitemap');
 const modelBuilder = require('./helpers/modelBuilder');
 
 // default routes with no controller yet
-router.get('/' + sitemap.aboutUs.route, (req, res, next) => {
-    const model = modelBuilder(sitemap.aboutUs.id);
-
-    console.log(model);
-
-    res.render('pages/onas', model);
-});
 router.get('/' + sitemap.search.route, (req, res, next) => {
     const model = modelBuilder(sitemap.search.id);
 

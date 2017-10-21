@@ -6,7 +6,7 @@
     "build": "gulp build",
     "build-frontend": "gulp build-frontend",
     "start": "node ./bin/www",
-    "start-dev": "set DEBUG=inyacht-cz:* &npm start",
+    "start-dev": "set DEBUG=inyacht-cz:* &nodemon ./bin/www",
     "start-frontend": "gulp start-frontend",
     "start-webpack": "gulp js"
   },
@@ -24,6 +24,8 @@
     "gulp": "^3.9.1",
     "gulp-less": "^3.3.0",
     "gulp-watch": "^4.3.11",
+    "node-fetch": "^1.7.2",
+    "nodemon": "^1.12.1",
     "source-map-loader": "^0.2.1",
     "typescript": "^2.4.2",
     "webpack": "^3.5.5",

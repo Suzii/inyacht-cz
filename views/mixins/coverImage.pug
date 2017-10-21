@@ -1,4 +1,3 @@
 mixin coverImage(src, alt)
     .container-fluid.no-padding
-        .cover-image(style="background-image: url(" + src + ")")
-            //img(src=src, alt=alt).img-responsive
+        .cover-image(style="background-image: url(" + src + ")", role="image", aria-label='"' + alt + '"')
