@@ -1,6 +1,6 @@
 const { ContentItem } = require('kentico-cloud-delivery-typescript-sdk');
 
-class Page extends ContentItem {
+class ContactPage extends ContentItem {
   // title: data.item.elements.p__title.value,
   // leadingParagraph: data.item.elements.p__leading_paragraph.value,
   // coverImage: data.item.elements.p__cover_photo.value[0],
@@ -17,9 +17,9 @@ class Page extends ContentItem {
           case 'friendly_url': return 'slug';
         }
       },
-      linkResolver: (link) => link.type === 'page' ? link.url_slug : undefined,
+      linkResolver: (link) => link.type === 'contact_page' ? link.url_slug : undefined,
     });
   }
 }
 
-module.exports = Page;
+module.exports = ContactPage;

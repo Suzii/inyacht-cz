@@ -20,7 +20,7 @@ router.get('/', (req, res, next) => {
     })
     .catch(err => {
       console.log('error:' + err);
-      res.render('pages/ooops', { error: JSON.stringify(err) });
+      res.render('pages/ooops', { error: JSON.stringify(err, null, 4) });
     });
 });
 
