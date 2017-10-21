@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sitemap = require('./helpers/sitemap');
-const modelBuilder = require('./helpers/modelBuilder');
+const modelBuilder = require('./helpers/sharedModelBuilder');
 
 /* GET home page. */
 router.get('/' + sitemap.index.route, (req, res, next) => {
