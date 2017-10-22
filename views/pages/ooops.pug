@@ -1,7 +1,9 @@
 h1 Ooops, neco sa podelalo...
 div
     a(href="/kontakt") Prosim napiste nam
+    |
     | a reknete nasim ajtakum co nefunguje
 
-div
-    | #{error}
+if develop
+    pre
+        | #{JSON.stringify(error, null, 4)}

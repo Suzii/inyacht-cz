@@ -1,5 +1,6 @@
 const { TypeResolver } = require('kentico-cloud-delivery-typescript-sdk');
 
+const Blockquote = require('./models/Blockquote');
 const ContactData = require('./models/ContactData');
 const ContactPage = require('./models/ContactPage');
 const FaqPage = require('./models/FaqPage');
@@ -9,6 +10,7 @@ const Page = require('./models/Page');
 const QnA = require('./models/QnA');
 
 const typeResolvers = [
+  new TypeResolver("blockquote", () => new Blockquote()),
   new TypeResolver("contact_data", () => new ContactData()),
   new TypeResolver("contact_page", () => new ContactPage()),
   new TypeResolver("faq_page", () => new FaqPage()),

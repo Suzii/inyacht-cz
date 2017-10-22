@@ -1,8 +1,11 @@
 const deliveryClient = require('./../kentico-cloud/deliverClient');
 
+const cache = {};
+
 const getItem = (codename) => deliveryClient.item(codename)
   .get()
   .toPromise();
+
 
 const getAboutUs = () => getItem('about_us');
 const getContact = () => getItem('contact');
