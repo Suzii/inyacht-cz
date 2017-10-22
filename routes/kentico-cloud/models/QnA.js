@@ -15,7 +15,7 @@ class QnA extends ContentItem {
 
         return fieldName;
       }),
-      linkResolver: (link) => link.type === 'q___a' ? `faq#${link.url_slug}` : undefined,
+      linkResolver: (link) => link.type === 'q___a' ? `/faq#${link.url_slug}` : undefined,
     })
   }
 }
