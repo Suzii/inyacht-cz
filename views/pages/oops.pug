@@ -1,0 +1,47 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        meta(name="description", content="TODO")
+        meta(name="author", content="Suzii")
+        link(rel="icon", href="/img/favicon.ico", type="image/x-icon")
+        link(rel="shortcut icon", href="/img/favicon.ico", type="image/x-icon")
+        title InYacht - #{title}
+        block styles
+            link(rel="stylesheet", href="/css/oops.css")
+    body
+        block body
+            .oops-page
+                .oops-page__title
+                    h1 Ooops, neco sa podelalo...
+                .oops-page__subtitle
+                    a(href="/kontakt")  Napiste nam
+                    | a reknete nasim ajtakum co nefunguje
+
+                if debug
+                    .oops-page__reason
+                        pre
+                            | #{JSON.stringify(error, null, 4)}
+
+        block scripts
+            // only render smartsupp when in production
+            if !debug
+                script.
+                  <!-- Smartsupp Live Chat script -->
+                  var _smartsupp = _smartsupp || {};
+                  _smartsupp.key = '0982aa6f4a5c94c6b556f924c00844758c9cabdd';
+                  window.smartsupp || (function (d) {
+                    var s, c, o = smartsupp = function () {
+                      o._.push(arguments)
+                    };
+                    o._ = [];
+                    s = d.getElementsByTagName('script')[0];
+                    c = d.createElement('script');
+                    c.type = 'text/javascript';
+                    c.charset = 'utf-8';
+                    c.async = true;
+                    c.src = '//www.smartsuppchat.com/loader.js?';
+                    s.parentNode.insertBefore(c, s);
+                  })(document);

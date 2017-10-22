@@ -100,6 +100,11 @@ const sitemap = {
     menuItem: 'Počasí na moři',
     children: [],
   },
+  oops: {
+    id: 'weather',
+    view: 'pages/oops',
+    title: 'Oops',
+  }
 };
 
 module.exports = sitemap;

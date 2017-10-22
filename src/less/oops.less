@@ -1,0 +1,55 @@
+// fonts
+@import url("https://fonts.googleapis.com/css?family=Cabin|Raleway:400,600,800&subset=latin-ext");
+
+@import "custom-bootstrap/custom-bootstrap.less";
+
+// general
+@import "constants.less";
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: @primary-color;
+}
+
+.oops-page {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: @white;
+}
+
+.oops-page__title {
+  h1,h2,h3,h4 {
+    color: @blue-50;
+  }
+}
+
+.oops-page__subtitle {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  a {
+    color: @white;
+  }
+  color: @blue-100;
+}
+
+.oops-page__reason {
+  margin-top: 5rem;
+}

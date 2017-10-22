@@ -28,7 +28,7 @@ router.get(sitemap.aboutUs.route, (req, res, next) => {
     })
     .catch((err) => {
       console.error('Error:' + err);
-      res.render('pages/ooops', { error: JSON.stringify(err, null, 4) });
+      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
     });
 });
 
@@ -39,7 +39,7 @@ router.get(sitemap.search.route, (req, res, next) => {
     })
     .catch((err) => {
       console.error('Error:' + err);
-      res.render('pages/ooops', { error: JSON.stringify(err, null, 4) });
+      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
     });
 });
 
@@ -50,11 +50,10 @@ router.get(sitemap.contact.route, (req, res, next) => {
     })
     .catch((err) => {
       console.error('Error:' + err);
-      res.render('pages/ooops', { error: JSON.stringify(err, null, 4) });
+      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
     });
 });
 
-// jachting
 router.get(sitemap.destinations.route, (req, res, next) => {
   getDestinations()
     .then(response => {
@@ -62,7 +61,7 @@ router.get(sitemap.destinations.route, (req, res, next) => {
     })
     .catch((err) => {
       console.error('Error:' + err);
-      res.render('pages/ooops', { error: JSON.stringify(err, null, 4) });
+      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
     });
 });
 
@@ -73,7 +72,7 @@ router.get(sitemap.faq.route, (req, res, next) => {
     })
     .catch((err) => {
       console.error('Error:' + err);
-      res.render('pages/ooops', { error: JSON.stringify(err, null, 4) });
+      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
     });
 });
 
@@ -84,7 +83,7 @@ router.get(sitemap.newsPost.route, (req, res, next) => {
     })
     .catch((err) => {
       console.error('Error:' + err);
-      res.render('pages/ooops', { error: JSON.stringify(err, null, 4) });
+      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
     });
 });
 
@@ -100,7 +99,7 @@ router.get(sitemap.news.route, (req, res, next) => {
     })
     .catch((err) => {
       console.error('Error:' + err);
-      res.render('pages/ooops', { error: JSON.stringify(err, null, 4) });
+      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
     });
 });
 
@@ -111,12 +110,12 @@ router.get(sitemap.weather.route, (req, res, next) => {
     })
     .catch((err) => {
       console.error('Error:' + err);
-      res.render('pages/ooops', { error: JSON.stringify(err, null, 4) });
+      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
     });
 });
 
 router.get("*", (req, res, next) => {
-  res.render('pages/ooops', { error: "Page not found" });
+  res.render('pages/oops',  getViewModel(sitemap.oops.id, null, { error: '404 - page not found' }));
 });
 
 module.exports = router;
