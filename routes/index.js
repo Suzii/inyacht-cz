@@ -3,6 +3,7 @@ const router = express.Router();
 const sitemap = require('./helpers/sitemap');
 const getViewModel = require('./helpers/getViewModel');
 const { convertToCodename } = require('./helpers/codename-url-slug-converters');
+const { clearCache } = require('./providers/cache');
 const {
   getAboutUs,
   getContact,
@@ -16,6 +17,11 @@ const {
 } = require('./providers/dataProvider');
 
 logMe = (data) => console.log('data:', JSON.stringify(data, null, 4));
+
+router.get('/webhook', (req, res, next) => {
+  clearCache();
+  res.send('Webhook called, cache cleared...');
+});
 
 router.get(sitemap.index.route, (req, res, next) => {
   res.render(sitemap.index.view, getViewModel(sitemap.aboutUs.id, {}));
