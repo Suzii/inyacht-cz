@@ -4,14 +4,15 @@ const sitemap = require('./helpers/sitemap');
 const getViewModel = require('./helpers/getViewModel');
 const { convertToCodename } = require('./helpers/codename-url-slug-converters');
 const {
-    getAboutUs,
-    getContact,
-    getSearch,
-    getFaq,
-    getNews,
-    getNewsPost,
-    getWeather,
-    getDestinations,
+  getAboutUs,
+  getContact,
+  getSearch,
+  getFaq,
+  getNews,
+  getNewsPost,
+  getNewsPostsPreviews,
+  getWeather,
+  getDestinations,
 } = require('./providers/dataProvider');
 
 logMe = (data) => console.log('data:', JSON.stringify(data, null, 4));
@@ -76,8 +77,6 @@ router.get(sitemap.faq.route, (req, res, next) => {
     });
 });
 
-// TODO also nested routes of articles
-
 router.get(sitemap.newsPost.route, (req, res, next) => {
   getNewsPost(convertToCodename(req.params.newsPostSlug))
     .then(response => {
@@ -90,9 +89,14 @@ router.get(sitemap.newsPost.route, (req, res, next) => {
 });
 
 router.get(sitemap.news.route, (req, res, next) => {
-  getNews()
-    .then(response => {
-      res.render(sitemap.news.view, getViewModel(sitemap.news.id, response.item));
+  const newsPromise = getNews();
+  const newsPostsPreviewPromise = getNewsPostsPreviews();
+
+  Promise.all([newsPromise, newsPostsPreviewPromise])
+    .then(responses => {
+      const newsResponse = responses[0];
+      const postsResponse = responses[1];
+      res.render(sitemap.news.view, getViewModel(sitemap.news.id, newsResponse.item, { posts: postsResponse.items }))
     })
     .catch((err) => {
       console.error('Error:' + err);
@@ -112,7 +116,7 @@ router.get(sitemap.weather.route, (req, res, next) => {
 });
 
 router.get("*", (req, res, next) => {
-      res.render('pages/ooops', { error: "Page not found" });
+  res.render('pages/ooops', { error: "Page not found" });
 });
 
 module.exports = router;

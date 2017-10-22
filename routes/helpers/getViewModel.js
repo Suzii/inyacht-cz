@@ -1,7 +1,7 @@
 const sitemap = require('./sitemap');
 const debug = require('debug')('inyacht-cz:server');
 
-const getViewModel = (currentRouteId, item) => ({
+const getViewModel = (currentRouteId, item, more) => (Object.assign({
   debug: debug,
 
   sitemap: sitemap,
@@ -9,6 +9,6 @@ const getViewModel = (currentRouteId, item) => ({
   title: sitemap[currentRouteId].title,
 
   item,
-});
+}, more));
 
 module.exports = getViewModel;

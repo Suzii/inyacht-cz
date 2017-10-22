@@ -2,12 +2,11 @@ extends ../../page-layout
 include ../../mixins/coverImage
 
 block content
-
     .container
         .row
             .col-sm-12
                 h1 #{item.pTitle.value}
-
+                p.text-muted #{moment(new Date(item.published.value)).format('DD.MM.YYYY')}
                 p.lead #{item.pLeadingParagraph.value}
 
     +coverImage(item.pCoverPhoto.value[0].url, item.pCoverPhoto.value[0].description)
@@ -17,4 +16,4 @@ block content
             .col-sm-12
                 | !{item.pBody.getHtml()}
 
-        block more
+    block more

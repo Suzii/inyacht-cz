@@ -1,0 +1,11 @@
+mixin newsPostPreview(post)
+    .row
+        .col-sm-2.hidden-xs
+            .news-post-preview__teaser-image--circle
+                img(alt=post.pCoverPhoto.value[0].description, src=post.pCoverPhoto.value[0].url)
+
+        .col-sm-10.col-xs-12
+            h4
+                a(href='novinky/' + post.friendlyUrl.value) #{post.pTitle.value}
+            p.text-muted #{moment(new Date(post.published.value)).format('DD.MM.YYYY')}
+            p #{post.pLeadingParagraph.value}

@@ -6,6 +6,7 @@ class NewsPost extends ContentItem {
   // public pCoverPhoto: Fields.AssetsField;
   // public pBody: Fields.RichTextField;
   // public friendlyUrl: Fields.UrlSlugField;
+  // public published: Fields.DateTime;
 
   constructor() {
     super({
@@ -29,6 +30,10 @@ class NewsPost extends ContentItem {
 
         if (fieldName === 'friendly_url') {
           return 'friendlyUrl';
+        }
+
+        if (fieldName === 'published') {
+          return 'published';
         }
 
         return fieldName;
