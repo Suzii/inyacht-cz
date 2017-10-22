@@ -2,16 +2,20 @@ mixin contactData(data)
     dl.dl-horizontal
         dt Email:
         dd
-            a(href="mailto:charter@inyacht.cz") charter@inyacht.cz
+            a(href=data.email.value) #{data.email.value}
 
         dt Telefon:
-        dd +420 123 456 789
+        dd #{data.phoneNumber.value}
 
         dt Facebook:
-        dd InYacht -- TODO
+        dd
+            a(href=data.facebookUrl.value) #{data.facebookUrl.value}
 
         dt Instagram:
-        dd inyacht -- TODO
+        dd
+            a(href=data.instagramUrl.value) #{data.instagramUrl.value}
 
         dt Twitter:
-        dd in_yacht -- TODO
+        dd
+            a(href=data.twitterUrl.value) #{data.twitterUrl.value}
+
