@@ -1,0 +1,20 @@
+extends ../../page-layout
+include ../../mixins/coverImage
+
+block content
+
+    .container
+        .row
+            .col-sm-12
+                h1 #{item.pTitle.value}
+
+                p.lead #{item.pLeadingParagraph.value}
+
+    +coverImage(item.pCoverPhoto.value[0].url, item.pCoverPhoto.value[0].description)
+
+    .container
+        .row
+            .col-sm-12
+                | !{item.pBody.getHtml()}
+
+        block more

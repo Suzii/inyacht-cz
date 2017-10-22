@@ -12,6 +12,7 @@ const getContact = () => getItem('contact');
 const getSearch = () => getItem('search');
 const getFaq = () => getItem('frequently_asked_questions');
 const getNews = () => getItem('news_page');
+const getNewsPost = (codename) => getItem(codename);
 const getWeather = () => getItem('weather');
 const getDestinations = () => getItem('destinations');
 
@@ -21,6 +22,7 @@ module.exports = {
   getSearch,
   getFaq,
   getNews,
+  getNewsPost,
   getWeather,
   getDestinations,
 };

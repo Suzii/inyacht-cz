@@ -6,6 +6,7 @@ const ContactPage = require('./models/ContactPage');
 const FaqPage = require('./models/FaqPage');
 const InvoiceData = require('./models/InvoiceData');
 const News = require('./models/News');
+const NewsPost = require('./models/NewsPost');
 const Page = require('./models/Page');
 const QnA = require('./models/QnA');
 
@@ -16,6 +17,7 @@ const typeResolvers = [
   new TypeResolver("faq_page", () => new FaqPage()),
   new TypeResolver("invoice_data", () => new InvoiceData()),
   new TypeResolver("news", () => new News()),
+  new TypeResolver("news_post", () => new NewsPost()),
   new TypeResolver("page", () => new Page()),
   new TypeResolver("q___a", () => new QnA()),
 ];

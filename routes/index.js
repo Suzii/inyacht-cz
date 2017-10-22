@@ -2,12 +2,14 @@ const express = require('express');
 const router = express.Router();
 const sitemap = require('./helpers/sitemap');
 const getViewModel = require('./helpers/getViewModel');
+const { convertToCodename } = require('./helpers/codename-url-slug-converters');
 const {
     getAboutUs,
     getContact,
     getSearch,
     getFaq,
     getNews,
+    getNewsPost,
     getWeather,
     getDestinations,
 } = require('./providers/dataProvider');
@@ -75,6 +77,18 @@ router.get(sitemap.faq.route, (req, res, next) => {
 });
 
 // TODO also nested routes of articles
+
+router.get(sitemap.newsPost.route, (req, res, next) => {
+  getNewsPost(convertToCodename(req.params.newsPostSlug))
+    .then(response => {
+      res.render(sitemap.newsPost.view, getViewModel(sitemap.newsPost.id, response.item));
+    })
+    .catch((err) => {
+      console.error('Error:' + err);
+      res.render('pages/ooops', { error: JSON.stringify(err, null, 4) });
+    });
+});
+
 router.get(sitemap.news.route, (req, res, next) => {
   getNews()
     .then(response => {
