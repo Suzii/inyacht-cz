@@ -7,7 +7,6 @@ const {
   DeliveryClientConfig,
 } = require('kentico-cloud-delivery-typescript-sdk');
 const typeResolvers = require('./typeResolvers');
-const { previewApiKey } = require('./secrets');
 
 const projectId = 'c93a27a6-8556-45f6-b5e0-6fa74415f3b2';
 const deliveryClient = new DeliveryClient(
@@ -15,8 +14,8 @@ const deliveryClient = new DeliveryClient(
     projectId,
     typeResolvers,
     {
-      enablePreviewMode: true,
-      previewApiKey,
+      enablePreviewMode: !!process.env.DELIVERY_PREVIEW,
+      previewApiKey: process.env.PREVIEW_API_KEY,
     })
 );
 

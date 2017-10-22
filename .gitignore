@@ -1,6 +1,6 @@
 #custom
 # API keys
-secrets.js
+.env
 models/generated/**
 
 
