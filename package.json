@@ -14,6 +14,7 @@
     "body-parser": "~1.17.1",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
+    "dotenv": "^4.0.0",
     "dotenv-safe": "^4.0.4",
     "express": "~4.15.2",
     "kentico-cloud-delivery-typescript-sdk": "^2.0.3",
