@@ -20,20 +20,11 @@ const sitemap = {
   },
   search: {
     id: 'search',
-    route: '/vyhledavac',
+    route: '/najit-lod',
     view: 'pages/search',
     parentRouteId: null,
-    title: 'Vyhledávač',
-    menuItem: 'Vyhledávač',
-    children: [],
-  },
-  courses: {
-    id: 'courses',
-    route: '/kapitanske-kurzy',
-    view: 'pages/courses',
-    parentRouteId: null,
-    title: 'Kapitánske kurzy',
-    menuItem: 'Kapitánske kurzy',
+    title: 'Najít loď',
+    menuItem: 'Najít loď',
     children: [],
   },
   contact: {
