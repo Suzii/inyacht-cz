@@ -1,5 +1,5 @@
-const deliveryClient = require('../kentico-cloud/deliverClient');
-const { getItemCached } = require('./cache');
+const deliveryClient = require('./deliveryClient');
+const { getItemCached } = require('../utils/cache');
 
 const getItem = (codename) => {
   console.log('KC API: ', codename);
