@@ -8,6 +8,7 @@ const getItem = (codename) => {
     .toPromise();
 };
 
+const getHomepage = () => getItemCached('homepage', () => getItem('homepage'));
 const getAboutUs = () => getItemCached('about_us', () => getItem('about_us'));
 const getContact = () => getItemCached('contact', () => getItem('contact'));
 const getSearch = () => getItemCached('search', () => getItem('search'));
@@ -33,6 +34,7 @@ const getNewsPostsPreviews = () => getItemCached(newsPostsPreviewsCacheKey, getN
 
 
 module.exports = {
+  getHomepage,
   getAboutUs,
   getContact,
   getSearch,

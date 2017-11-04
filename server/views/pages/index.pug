@@ -1,15 +1,31 @@
 extends ../page-layout
-include ../mixins/coverImage
+include ../mixins/newsPostPreview
 
 block content
     .container-fluid.no-padding
         .cover-video
             video(
             type="video/mp4"
-            src="https://assets.kenticocloud.com:443/c93a27a6-8556-45f6-b5e0-6fa74415f3b2/e7a0773e-ab33-4a33-b69b-5d74cce5c006/cover-12mb.mp4"
+            src=item.coverVideo.value[0].url
             poster="/img/cover-poster.png"
             loop
             autoplay
             muted
             )
 
+    .container
+            .row
+                .col-sm-12
+                    h1.page-header #{item.newsPage[0].pTitle.value}
+
+                    p.lead #{item.newsPage[0].pLeadingParagraph.value}
+
+            .row
+                .col-sm-12
+                    | !{item.newsPage[0].pBody.getHtml()}
+
+
+            .row
+                .col-sm-12
+                    each post in posts
+                        +newsPostPreview(post)

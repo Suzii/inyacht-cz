@@ -5,6 +5,7 @@ const getViewModel = require('./helpers/getViewModel');
 const { convertToCodename } = require('./helpers/codename-url-slug-converters');
 const { clearCache } = require('../utils/cache');
 const {
+  getHomepage,
   getAboutUs,
   getContact,
   getSearch,
@@ -24,7 +25,19 @@ router.get('/webhook', (req, res, next) => {
 });
 
 router.get(sitemap.index.route, (req, res, next) => {
-  res.render(sitemap.index.view, getViewModel(sitemap.aboutUs.id, {}));
+  const homepagePromise = getHomepage();
+  const newsPostsPreviewPromise = getNewsPostsPreviews();
+
+  Promise.all([homepagePromise, newsPostsPreviewPromise])
+    .then(responses => {
+      const homepageResponse = responses[0];
+      const postsResponse = responses[1];
+      res.render(sitemap.index.view, getViewModel(sitemap.index.id, homepageResponse.item, { posts: postsResponse.items }))
+    })
+    .catch((err) => {
+      console.error('Error:' + err);
+      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
+    });
 });
 
 router.get(sitemap.aboutUs.route, (req, res, next) => {
