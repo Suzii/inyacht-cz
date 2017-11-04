@@ -9,6 +9,8 @@ ol.faq-list {
     counter-increment: item;
 
     .faq-list__item--question {
+      .fix-navbar-heading-interference();
+
       h4::before {
         padding-right: 0.5em;
         text-align: right;
@@ -26,3 +28,5 @@ ol.faq-list {
     }
   }
 }
+
+

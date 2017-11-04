@@ -1,0 +1,11 @@
+// this is here to fix the fixed navbar covering the beginning of the question
+// put this on the element that is being referenced by id
+.fix-navbar-heading-interference() {
+  &:before {
+    display: block;
+    content: " ";
+    margin-top: -@navbar-height-shrinked;
+    height: @navbar-height-shrinked;
+    visibility: hidden;
+  }
+}
