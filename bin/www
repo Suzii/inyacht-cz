@@ -1,20 +1,13 @@
 #!/usr/bin/env node
 
 /**
- * Build frontend assets.
- */
-const gulp = require('gulp');
-require('./../gulpfile');
-gulp.start('build-frontend');
-
-/**
  * Module dependencies.
  */
 require('dotenv-safe').load({
   allowEmptyValues: true
 });
 
-var app = require('../app');
+var app = require('../server/app');
 var debug = require('debug')('inyacht-cz:server');
 var http = require('http');
 

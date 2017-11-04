@@ -3,12 +3,11 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "gulp build",
     "build-frontend": "gulp build-frontend",
     "start": "node ./bin/www",
     "start-dev": "set DEBUG=inyacht-cz:* &nodemon ./bin/www",
     "start-frontend": "gulp start-frontend",
-    "start-webpack": "gulp js"
+    "postinstall": "gulp build-frontend"
   },
   "dependencies": {
     "body-parser": "~1.17.1",

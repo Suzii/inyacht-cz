@@ -1,5 +1,5 @@
-extends ./page-layout
-include ./mixins/coverImage
+extends page-layout
+include mixins/coverImage
 
 block content
     +coverImage(item.pCoverPhoto.value[0].url, item.pCoverPhoto.value[0].description)
