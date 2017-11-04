@@ -13,8 +13,6 @@ const {
   getNews,
   getNewsPost,
   getNewsPostsPreviews,
-  getWeather,
-  getDestinations,
 } = require('../kentico-cloud/dataProvider');
 
 logMe = (data) => console.log('data:', JSON.stringify(data, null, 4));
@@ -34,10 +32,7 @@ router.get(sitemap.index.route, (req, res, next) => {
       const postsResponse = responses[1];
       res.render(sitemap.index.view, getViewModel(sitemap.index.id, homepageResponse.item, { posts: postsResponse.items }))
     })
-    .catch((err) => {
-      console.error('Error:' + err);
-      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
-    });
+    .catch(handleServerError);
 });
 
 router.get(sitemap.aboutUs.route, (req, res, next) => {
@@ -45,10 +40,7 @@ router.get(sitemap.aboutUs.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.aboutUs.view, getViewModel(sitemap.aboutUs.id, response.item));
     })
-    .catch((err) => {
-      console.error('Error:' + err);
-      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
-    });
+    .catch(handleServerError);
 });
 
 router.get(sitemap.search.route, (req, res, next) => {
@@ -56,10 +48,7 @@ router.get(sitemap.search.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.search.view, getViewModel(sitemap.search.id, response.item));
     })
-    .catch((err) => {
-      console.error('Error:' + err);
-      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
-    });
+    .catch(handleServerError);
 });
 
 router.get(sitemap.contact.route, (req, res, next) => {
@@ -67,21 +56,7 @@ router.get(sitemap.contact.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.contact.view, getViewModel(sitemap.contact.id, response.item));
     })
-    .catch((err) => {
-      console.error('Error:' + err);
-      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
-    });
-});
-
-router.get(sitemap.destinations.route, (req, res, next) => {
-  getDestinations()
-    .then(response => {
-      res.render(sitemap.destinations.view, getViewModel(sitemap.search.id, response.item));
-    })
-    .catch((err) => {
-      console.error('Error:' + err);
-      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
-    });
+    .catch(handleServerError);
 });
 
 router.get(sitemap.faq.route, (req, res, next) => {
@@ -89,10 +64,7 @@ router.get(sitemap.faq.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.faq.view, getViewModel(sitemap.faq.id, response.item));
     })
-    .catch((err) => {
-      console.error('Error:' + err);
-      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
-    });
+    .catch(handleServerError);
 });
 
 router.get(sitemap.newsPost.route, (req, res, next) => {
@@ -100,38 +72,26 @@ router.get(sitemap.newsPost.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.newsPost.view, getViewModel(sitemap.newsPost.id, response.item));
     })
-    .catch((err) => {
-      console.error('Error:' + err);
-      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
-    });
+    .catch(handleServerError);
 });
 
-router.get(sitemap.news.route, (req, res, next) => {
-  const newsPromise = getNews();
-  const newsPostsPreviewPromise = getNewsPostsPreviews();
+// router.get(sitemap.news.route, (req, res, next) => {
+//   const newsPromise = getNews();
+//   const newsPostsPreviewPromise = getNewsPostsPreviews();
+//
+//   Promise.all([newsPromise, newsPostsPreviewPromise])
+//     .then(responses => {
+//       const newsResponse = responses[0];
+//       const postsResponse = responses[1];
+//       res.render(sitemap.news.view, getViewModel(sitemap.news.id, newsResponse.item, { posts: postsResponse.items }))
+//     })
+//     .catch(handleServerError);
+// });
 
-  Promise.all([newsPromise, newsPostsPreviewPromise])
-    .then(responses => {
-      const newsResponse = responses[0];
-      const postsResponse = responses[1];
-      res.render(sitemap.news.view, getViewModel(sitemap.news.id, newsResponse.item, { posts: postsResponse.items }))
-    })
-    .catch((err) => {
-      console.error('Error:' + err);
-      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
-    });
-});
-
-router.get(sitemap.weather.route, (req, res, next) => {
-  getWeather()
-    .then(response => {
-      res.render(sitemap.weather.view, getViewModel(sitemap.weather.id, response.item));
-    })
-    .catch((err) => {
-      console.error('Error:' + err);
-      res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
-    });
-});
+const handleServerError = (err) => {
+  console.error('Error:' + err);
+  res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
+};
 
 router.get("*", (req, res, next) => {
   res.render('pages/oops',  getViewModel(sitemap.oops.id, null, { error: '404 - page not found' }));

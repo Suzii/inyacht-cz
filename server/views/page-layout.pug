@@ -16,21 +16,13 @@ block body
                 ul.nav.navbar-nav.navbar-right
                     +navLink(sitemap.aboutUs)
                     +navLink(sitemap.search)
-                    li(class={dropdown: true, active: sitemap.yachting.id === sitemap[currentRouteId].parentRouteId})
-                        a(href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false")
-                            | #{sitemap.yachting.menuItem}
-                            span.caret
+                    +navLink(sitemap.news)
 
-                        ul.dropdown-menu
-                            li
-                                a(href=sitemap.faq.route) #{sitemap.faq.menuItem}
-                            li
-                                a(href=sitemap.news.route) #{sitemap.news.menuItem}
-                            li
-                                a(href=sitemap.destinations.route) #{sitemap.destinations.menuItem}
-                            li
-                                a(href=sitemap.weather.route) #{sitemap.weather.menuItem}
-                    //+navLink(sitemap.courses)
+                    li(class={ active: sitemap.faq.id === currentRouteId })
+                        a(href=sitemap.faq.route)
+                            span.hidden-sm Námořní
+                            |  jachting
+
                     +navLink(sitemap.contact)
 
     block content
@@ -50,25 +42,12 @@ block body
                                     a(href="./vyhledavac") Vyhledávač
                                 h4
                                     a(href="./faq") Námořní jachting
-                                //h4
-                                //    a(href="./kurzy") Kapitánske kurzy
+                                h4
+                                    a(href="/#novinky") Novinky
                                 h4
                                     a(href="./kontakt") Kontakt
                             .col-sm-6.col-xs-6.logo-container.hidden-xs
                                 img.logo(src="/img/footer-logo.png")
-                                //ul.list-unstyled
-                                //    li
-                                //        h5
-                                //            a(href="./faq") Časté otázky
-                                //    li
-                                //        h5
-                                //            a(href="./novinky") Novinky
-                                //    li
-                                //        h5
-                                //            a(href="./destinace") Oblíbené destinace
-                                //    li
-                                //        h5
-                                //            a(href="./pocasi") Počasí na moři
 
                     .col-md-6.col-sm-6.col-xs-12.contact#contact
                         .row
