@@ -1,4 +1,4 @@
-const deliveryClient = require('./../kentico-cloud/deliverClient');
+const deliveryClient = require('../kentico-cloud/deliverClient');
 const { getItemCached } = require('./cache');
 
 const getItem = (codename) => {

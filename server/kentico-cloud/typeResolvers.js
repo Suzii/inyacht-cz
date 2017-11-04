@@ -1,14 +1,14 @@
 const { TypeResolver } = require('kentico-cloud-delivery-typescript-sdk');
 
-const Blockquote = require('./models/Blockquote');
-const ContactData = require('./models/ContactData');
-const ContactPage = require('./models/ContactPage');
-const FaqPage = require('./models/FaqPage');
-const InvoiceData = require('./models/InvoiceData');
-const News = require('./models/News');
-const NewsPost = require('./models/NewsPost');
-const Page = require('./models/Page');
-const QnA = require('./models/QnA');
+const Blockquote = require('../models/Blockquote');
+const ContactData = require('../models/ContactData');
+const ContactPage = require('../models/ContactPage');
+const FaqPage = require('../models/FaqPage');
+const InvoiceData = require('../models/InvoiceData');
+const News = require('../models/News');
+const NewsPost = require('../models/NewsPost');
+const Page = require('../models/Page');
+const QnA = require('../models/QnA');
 
 const typeResolvers = [
   new TypeResolver("blockquote", () => new Blockquote()),

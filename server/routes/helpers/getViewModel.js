@@ -1,4 +1,4 @@
-const sitemap = require('./sitemap');
+const sitemap = require('../../sitemap');
 const debug = require('debug')('inyacht-cz:server');
 
 const getViewModel = (currentRouteId, item, more) => (Object.assign({

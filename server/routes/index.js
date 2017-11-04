@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const sitemap = require('./helpers/sitemap');
+const sitemap = require('../sitemap');
 const getViewModel = require('./helpers/getViewModel');
 const { convertToCodename } = require('./helpers/codename-url-slug-converters');
-const { clearCache } = require('./providers/cache');
+const { clearCache } = require('../providers/cache');
 const {
   getAboutUs,
   getContact,
@@ -14,7 +14,7 @@ const {
   getNewsPostsPreviews,
   getWeather,
   getDestinations,
-} = require('./providers/dataProvider');
+} = require('../providers/dataProvider');
 
 logMe = (data) => console.log('data:', JSON.stringify(data, null, 4));
 
