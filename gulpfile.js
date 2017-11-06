@@ -13,7 +13,11 @@ function swallowError(error) {
 }
 
 gulp.task('less', function () {
-    return gulp.src([SOURCE_DIR + '/less/styles.less', SOURCE_DIR + '/less/oops.less'])
+    return gulp.src([
+      SOURCE_DIR + '/less/styles.less',
+      SOURCE_DIR + '/less/oops.less',
+      SOURCE_DIR + '/less/booking-manager.less'
+    ])
         .pipe(less())
         .on('error', swallowError)
         .pipe(gulp.dest(OUTPUT_DIR + '/css'))

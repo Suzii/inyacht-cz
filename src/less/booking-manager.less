@@ -1,0 +1,802 @@
+// fonts
+@import url("https://fonts.googleapis.com/css?family=Cabin|Raleway:400,600,800&subset=latin-ext");
+@import "custom-bootstrap/custom-bootstrap.less";
+@import "constants.less";
+
+* {
+  font-family: @font-family-base, @font-family-sans-serif;
+  font-size: @font-size-base;
+}
+
+body {
+  background-color: @white;
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+hr {
+  margin: 2px 0 2px 0;
+  padding: 0;
+}
+
+.wbm_stacktrace {
+  display: none;
+}
+
+h1, h1.title {
+  font-size: @font-size-h2;
+  color: @headings-color;
+}
+
+div.wbm_content {
+  text-align: left;
+  margin-bottom: 15px;
+}
+
+div.box_title {
+  background-color: @secondary-color;
+  color: @white;
+  padding: 5px;
+  margin-bottom: 0.5rem;
+  font-size: @font-size-h4;
+  text-transform: capitalize;
+}
+
+div.box_content {
+  background-color: @white;
+  padding: 5px 8px 5px 8px;
+}
+
+.box_content {
+  border-bottom: solid 1px #C3C3C3;
+  margin-bottom: 5px;
+  padding-bottom: 5px;
+}
+
+.box_content h1 {
+  font-weight: bold;
+  color: @headings-color;
+  margin-bottom: 5px;
+  font-size: @font-size-h4;
+}
+
+.wbm_content .box_content a {
+  color: #686868;
+  text-decoration: underline;
+  text-align: center; /*display:block;*/
+  font-weight: normal;
+}
+
+.right_submit {
+  .btn-success {
+    background-color: @primary-color;
+  }
+}
+
+/*div.box_content div.box_content_width{width: 100%}*/
+
+div.box_content div.column1 {
+  width: 23%;
+  float: left;
+}
+
+div.box_content div.column2 {
+  width: 33%;
+  float: left;
+}
+
+div.box_content div.column3 {
+  width: 20%;
+  float: left;
+}
+
+div.box_content div.column4 {
+  width: 23%;
+  float: left;
+}
+
+div.box_content div.left_data {
+  float: left;
+  width: 140px;
+}
+
+
+div.cell {
+  line-height: 20px;
+}
+
+.cell label {
+  float: left;
+  height: 20px;
+  line-height: 36px;
+}
+
+div.box_content div.left_data_wide {
+  float: left;
+  width: 270px;
+}
+
+div.box_content div.right_data {
+  float: left;
+  margin-bottom: 5px;
+  line-height: 20px;
+}
+
+div.box_content INPUT.right_input {
+  margin-bottom: 5px;
+}
+
+div.box_content div.right_submit {
+  float: right;
+}
+
+div.image {
+  width: 122px;
+  height: 92px;
+  overflow: hidden;
+  margin-right: 8px;
+}
+
+div.cell {
+  padding-top: 3px;
+  padding-bottom: 1px;
+}
+
+div.footer {
+}
+
+div.footer_line {
+  border-bottom: 1px solid #C3C3C3;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+div.spacer {
+  height: 10px;
+  width: 10px;
+}
+
+div.spacer_h {
+  height: 1px;
+  width: 50px;
+}
+
+div.spacer_v {
+  height: 10px;
+  width: 1px;
+}
+
+STRONG {
+  color: #B81315;
+  font-weight: normal;
+}
+
+LABEL.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.discount {
+  color: green;
+}
+
+.price {
+  color: green;
+  font-size: 15px;
+}
+
+.formField {
+  width: 200px;
+}
+
+input, select {
+  .form-control();
+  display: inline-block;
+  width: inherit;
+}
+
+/* YACHT DETAILS */
+TABLE.yacht_details {
+  width: 100%;
+}
+
+TABLE.yacht_details TH {
+  text-align: left;
+  font-size: 14px;
+  line-height: 24px;
+  color: #0b5eb5;
+}
+
+TABLE.yacht_details TD {
+  line-height: 20px;
+  vertical-align: top;
+}
+
+TD.blue {
+  padding-right: 5px;
+}
+
+TD.blue LABEL {
+}
+
+TD.blue STRIKE {
+}
+
+TD.bold {
+  color: #B81315;
+  padding-right: 20px;
+}
+
+TD.table-title {
+  padding-right: 5px;
+}
+
+TD.table-title LABEL {
+}
+
+TD.table-title STRIKE {
+}
+
+TD.table-data {
+  color: #B81315;
+  padding-right: 20px;
+}
+
+TD.table-data-last {
+  color: #B81315;
+  text-align: right;
+}
+
+TABLE.search_result { /*width: 100%;*/
+}
+
+/*TABLE.search_result TD { vertical-align: top; }*/
+
+TABLE.booking-detail {
+  width: 100%;
+}
+
+TABLE.price-info {
+  width: 100%;
+}
+
+div.total-price-title {
+  line-height: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  /*color:#0b5eb5;*/
+  font-weight: bold;
+  float: left;
+  width: 200px;
+}
+
+div.total-price {
+  line-height: 20px;
+  margin-top: 0;
+  margin-bottom: 10px;
+  color: #B81315;
+  font-weight: bold;
+  float: right;
+  width: 200px;
+  text-align: right
+}
+
+.box_content_images {
+  border-bottom: solid 1px #0b5eb5;
+  margin-bottom: 10px;
+  padding-bottom: 5px;
+}
+
+.box_content_images_main {
+  float: left;
+  width: 446px;
+  height: 336px;
+  overflow: hidden;
+}
+
+.box_content_images_side {
+  float: right;
+  width: 216px;
+  height: 336px;
+  overflow: hidden;
+}
+
+.vr {
+  float: left;
+  width: 446px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.vr A {
+  display: block;
+  margin-left: 14px;
+  background-color: #153954;
+  color: #D2D1D1;
+  line-height: 24px;
+  width: 446px;
+  text-align: center;
+}
+
+.vr A:hover {
+  text-decoration: none;
+  color: #B9024D;
+}
+
+.more_pic {
+  float: right;
+  width: 216px;
+  padding-top: 10px;
+}
+
+.more_pic A {
+  display: block;
+  margin-right: 14px;
+  background-color: #dddddd;
+  line-height: 24px;
+  width: 216px;
+  text-align: center;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  color: #000000;
+}
+
+.more_pic A:hover {
+  text-decoration: none;
+  color: #0b5eb5;
+}
+
+TABLE.prices {
+  width: 100%;
+}
+
+TABLE.prices TH {
+  text-align: center;
+  background-color: #dddddd;
+}
+
+TABLE.prices TD.price {
+  font-weight: bold;
+  border-left: solid 1px #dddddd;
+}
+
+TABLE.prices TD {
+  border-right: solid 1px #dddddd;
+  border-bottom: solid 1px #dddddd;
+  text-align: center;
+  line-height: 20px;
+  font-size: 11px;
+}
+
+TABLE.yachts {
+  width: 100%;
+}
+
+TABLE.yachts TH {
+  text-align: center;
+  background-color: #153954;
+  line-height: 20px;
+  font-size: 11px;
+}
+
+TABLE.yachts TD.yachts {
+  font-weight: bold;
+  text-align: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-left: solid 1px #153954;
+}
+
+TABLE.yachts TD.price {
+  text-align: right;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+TABLE.yachts TD {
+  border-right: solid 1px #153954;
+  border-bottom: solid 1px #153954;
+  text-align: center;
+}
+
+/* YACH LIST (our fleet - yachts) */
+div.wbm_yachtlist_modelkind {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+div.wbm_yachtlist_box {
+  float: left;
+  width: 24%;
+  text-align: center;
+  margin-bottom: 2px;
+  min-height: 120px;
+}
+
+div.wbm_yachtlist_image {
+}
+
+div.wbm_yachtlist_info {
+}
+
+.rare {
+  float: right;
+  margin-top: 3px;
+  background: #990000;
+  border: solid 4px #990000;
+}
+
+.periodic {
+  float: right;
+  margin-top: 3px;
+  background: #FFA500;
+  border: solid 4px #FFA500;
+}
+
+.realtime {
+  float: right;
+  margin-top: 3px;
+  background: #4A9F94;
+  border: solid 4px #4A9F94;
+}
+
+option.rare {
+  float: right;
+  margin-top: 1px;
+  margin-left: 3px;
+  background: none;
+  border: none;
+  border-left: solid 8px #990000;
+  width: 100%;
+}
+
+option.periodic {
+  float: right;
+  margin-top: 1px;
+  margin-left: 3px;
+  background: none;
+  border: none;
+  border-left: solid 8px #FFA500;
+  width: 100%;
+}
+
+option.realtime {
+  float: right;
+  margin-top: 1px;
+  margin-left: 3px;
+  background: none;
+  border: none;
+  border-left: solid 8px #4A9F94;
+  width: 100%;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  option.rare {
+    float: right;
+    margin-top: 1px;
+    margin-left: 3px;
+    background: none;
+    border: none; /*border-left: solid 8px #990000;*/
+    width: 100%;
+    background-color: #990000;
+  }
+
+  option.periodic {
+    float: right;
+    margin-top: 1px;
+    margin-left: 3px;
+    background: none;
+    border: none; /*border-left: solid 8px #FFA500;*/
+    width: 100%;
+    background-color: #FFA500;
+  }
+
+  option.realtime {
+    float: right;
+    margin-top: 1px;
+    margin-left: 3px;
+    background: none;
+    border: none; /*border-left: solid 8px #4A9F94;*/
+    width: 100%;
+    background-color: #4A9F94;
+  }
+}
+
+
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+  option.rare{float:right; margin-top:1px; margin-left:3px; background: none; border: none; /*border-left: solid 8px #990000;*/  width: 100%; background-color: #990000; }
+  option.periodic{float:right; margin-top:1px; margin-left:3px; background: none;  border: none; /*border-left: solid 8px #FFA500;*/ width: 100%; background-color: #FFA500; }
+  option.realtime{float:right; margin-top:1px; margin-left:3px; background: none;  border: none; /*border-left: solid 8px #4A9F94;*/ width: 100%; background-color: #4A9F94; }
+}
+
+div.legend {}
+div.legend_border {float:left; border: solid 1px black; margin-right: 5px;}
+div.legend_border div {width:12px; height: 12px; line-height: 10px;}
+div.legend_border div.legend_rare {background: #990000;}
+div.legend_border div.legend_periodic {background: #FFA500;}
+div.legend_border div.legend_realtime {background: #4A9F94;}
+
+
+/* SMALL SEARCH FORM */
+div.wbm_ssf_box {
+}
+
+div.wbm_ssf_box div.title {
+  font-weight: bold;
+}
+
+div.wbm_ssf_box div.left_data { /*margin-bottom:5px; float: left; width:50px; background-color: red;*/
+}
+
+div.wbm_ssf_box div.right_data { /*margin-bottom:5px; float: left; width:50px; background-color: yellow;*/
+}
+
+div.wbm_ssf_box div.right_data #filter_base {
+  .form-control();
+}
+
+div.wbm_ssf_box div.submit {
+  margin-bottom: 5px;
+  margin-top: 5px;
+}
+
+div.wbm_ssf_box div.advancedsearch {
+  margin-bottom: 5px;
+}
+
+div.wbm_ssf_box div.clear {
+  display: none;
+}
+
+div.wbm_ssf_box #wbm_ssf_box_clearAfterSubmit {
+}
+
+div.bottomDiv {
+  position: fixed;
+  z-index: 1000;
+  bottom: 0;
+  right: 10px;
+  height: 225px;
+  width: 200px;
+  background-color: #ffda93;
+  border: 1px double black;
+}
+
+div.scrollDiv {
+  position: relative;
+  height: 175px;
+  width: 200px;
+  overflow: auto;
+  background-color: #fbf9ef;
+}
+
+div.med_warning {
+  color: orange;
+  font-weight: bold;
+}
+
+div.high_warning {
+  color: red;
+  font-weight: bold;
+}
+
+TD.base {
+  color: #B81315;
+  font-weight: bold;
+  background: #DDDDFF;
+}
+
+div.error {
+  color: red;
+  font-size: 12px;
+  border: 2px solid red;
+  padding: 3px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+div.info {
+  color: green;
+  font-size: 12px;
+  border: 2px solid green;
+  padding: 3px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/*contact form*/
+.contactColumn {
+  float: left;
+  margin-bottom: 10px;
+  margin-right: 20px;
+}
+
+.contactColumn label {
+  display: block;
+  float: left;
+  width: 100px;
+}
+
+div.contactColumn INPUT {
+  border: solid 1px #cccccc;
+  font-size: 12px;
+  width: 180px;
+}
+
+div.contactColumn SELECT {
+  border: solid 1px #cccccc;
+  font-size: 12px;
+  width: 180px;
+}
+
+/* jCal Component CSS */
+#calOne {
+  background:#e3e3e3;
+  padding:3px;
+  height:150px;
+}
+
+/* default dimensions and justification for each month including title */
+.jCal {
+  /* each day width + border-left + border-right */
+  width:127px;
+  height:21px;
+  text-align:center;
+  vertical-align:top;
+
+}
+/* default dimensions and justification for each month not including title */
+.jCalMo {
+  width:127px;		/* each day width + border-left + border-right */
+  float:left;
+  overflow:visible;
+  height:100%;
+  padding-right:1px;
+  padding-left:1px;
+  white-space:nowrap;
+}
+/* top month display block - i.e. January */
+.jCal .month, .jCal .monthSelect, .jCal .monthName, .jCal .monthYear {
+  line-height:16px;
+  height:16px;
+  text-align:center;
+  vertical-align:bottom;
+  font-family:Tahoma;
+  font-size:8pt;
+  color:#000000;
+  cursor:pointer;
+  float:left;
+}
+/* month name per calendar style - includes left/right padding and alignment */
+.jCal .monthName {
+  padding-left:2px;
+  padding-right:2px;
+  text-align:right;
+}
+/* year per calendar style - includes left/right padding and alignment */
+.jCal .monthYear {
+  float:right;
+  padding-left:2px;
+  padding-right:2px;
+  text-align:left;
+}
+/* hilight style for new month combobox pulldown for hover */
+.jCal .monthSelect {
+  background:#EEE url(https://www.booking-manager.com/wbm2/include/images/jcal/eeGrad2.gif) bottom repeat-x;
+}
+/* do not edit - this enables the new month combobox selector */
+.jCal .monthSelector {
+  position:absolute;
+}
+/* do not edit - this enables the new month combobox selector "shadow" for capturing auto-hide */
+.jCal .monthSelectorShadow {
+  position:absolute;
+  background:#808080;
+  padding:0px;
+}
+/* this is the hover for the month name */
+.jCal .monthNameHover {
+  background:#EDEDED url(https://www.booking-manager.com/wbm2/include/images/jcal/double-arrow-vert.gif) center left no-repeat;
+  color:#808080;
+}
+/* this is the hover for the year */
+.jCal .monthYearHover {
+  background:#EDEDED url(https://www.booking-manager.com/wbm2/include/images/jcal/double-arrow-vert.gif) center right no-repeat;
+  color:#808080;
+}
+/* this is the hover for the new month or year hover in the new combobox selection */
+.jCal .monthSelectHover {
+  background:#069;
+  color:#FFF;
+}
+/* day block dimensions and style - for all day blocks */
+.jCalMo .dow, .jCalMo .day, .jCalMo .pday, .jCalMo .aday, .jCalMo .overDay, .jCalMo .invday, .jCalMo .selectedDay {
+  width:16px;
+  font-family:Tahoma;
+  font-size:8pt;
+  color:#000000;
+  border-right:1px solid #CCC;
+  border-bottom:1px solid #CCC;
+  border-left:1px solid #EEE;
+  text-align:center;
+  cursor:default;
+  float:left;
+}
+/* day of week header specific style */
+.jCalMo .dow {
+  background:#EEE url(https://www.booking-manager.com/wbm2/include/images/jcal/eeGrad.gif) bottom repeat-x;
+  border-bottom:0px;
+}
+/* actual calendar day default style */
+.jCalMo .day, .jCalMo .invday {
+  height:16px;
+  text-align:center;
+}
+/* selectable calendar day specific style */
+.jCalMo .day {
+  cursor:pointer;
+  background:#FFF;
+}
+/* blacked-out calendar day specific style */
+.jCalMo .invday {
+  color:#808080;
+  background:#eeeeee;
+  text-decoration:line-through;
+}
+/* previous and subsequent months calendar day specific style */
+.jCalMo .pday, .jCalMo .aday {
+  height:16px;
+  background:#e3e3e3;
+  color:#CCC;
+}
+/* selected day */
+.jCalMo .selectedDay {
+  color:#FFF;
+  /* must use rgb() syntax for jquery.color.js compliance */
+  background:rgb(0, 143, 214);
+}
+/* mouseover hilighted selectable day */
+.jCalMo .overDay {
+  color:#FFF;
+  /* must use rgb() syntax for jquery.color.js compliance */
+  background:rgb(0, 102, 153);
+}
+/* left month navigation button - no need to change */
+.jCal .left {
+  background:url(https://www.booking-manager.com/wbm2/include/images/jcal/left.gif) center center no-repeat;
+  width:16px;
+  height:16px;
+  vertical-align:middle;
+  cursor:pointer;
+  float:left;
+}
+/* right month navigation button - no need to change */
+.jCal .right {
+  background:url(https://www.booking-manager.com/wbm2/include/images/jcal/right.gif) center center no-repeat;
+  width:16px;
+  height:16px;
+  vertical-align:middle;
+  cursor:pointer;
+  float:right;
+}
+/* no need to change - this is for carousel opacity */
+.jCalMask, .jCalMove {
+  position:absolute;
+  overflow:hidden;
+}
+
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn {
+  box-shadow: none;
+  cursor: not-allowed;
+  opacity: 0.65;
+  pointer-events: none;
+}
