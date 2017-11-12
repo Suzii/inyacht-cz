@@ -1,3 +1,7 @@
+html, body {
+  width: 100%;
+}
+
 // pseudo-grid... omg...
 div.box_content div.box_content_width {
   width: 100%
@@ -21,4 +25,52 @@ div.box_content div.column3 {
 div.box_content div.column4 {
   width: 23%;
   float: left;
+}
+
+// fixes
+input#resultsPage {
+  width: 4rem !important;
+}
+
+.box_content {
+  &>div>form:first-child {
+    input:last-of-type[value='nové vyhledávání'] {
+      color: @white;
+      background-color: @secondary-color;
+    }
+  }
+
+  .box_content_width {
+
+    .image {
+      display: inline-block;
+      position: relative;
+      width: 9rem;
+      height: 9rem;
+      overflow: hidden;
+      background-position: 50% 50%;
+      border-radius: 50%;
+
+      img {
+        max-height: 100%;
+        position: absolute;
+      }
+    }
+
+    h1 {
+      // dates, place - marine
+      &>strong, &+div>strong {
+        color: @secondary-color;
+      }
+    }
+
+    // more info button
+    button[type='submit'].btn.btn-primary {
+      text-transform: capitalize;
+
+      img {
+        display: none;
+      }
+    }
+  }
 }

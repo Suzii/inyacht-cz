@@ -1,231 +1,281 @@
-
-/* YACHT DETAILS */
-table.yacht_details {
+form[name='booking'] {
   width: 100%;
-}
+  // user notice to fill in the data and proceed to the next step
+  &>div:first-of-type {
+    text-align: center;
+    text-decoration: underline;
+    font-weight: 700;
+  }
 
-table.yacht_details th {
-  text-align: left;
-  font-size: 14px;
-  line-height: 24px;
-  color: #0b5eb5;
-}
+  &>br[clear='all'] {
+    display: none;
+  }
 
-table.yacht_details td {
-  line-height: 20px;
-  vertical-align: top;
-}
+  /* YACHT DETAILS */
+  table.yacht_details {
+    width: 100%;
 
-td.blue {
-  padding-right: 5px;
-}
+    th {
+      text-align: left;
+      font-size: 14px;
+      line-height: 24px;
+      color: #0b5eb5;
+    }
+    td {
+      line-height: 20px;
+      vertical-align: top;
+    }
+  }
 
-td.blue label {
-}
+  table.booking-detail {
+    width: 100%;
+  }
 
-td.blue strike {
-}
+  td.table-title {
+    padding-right: 1rem;
+    font-weight: 700;
+  }
 
-td.bold {
-  color: #B81315;
-  padding-right: 20px;
-}
+  td.table-title label {
+  }
 
-td.table-title {
-  padding-right: 5px;
-}
+  td.table-title strike {
+  }
 
-td.table-title label {
-}
+  td.table-data {
+    padding-right: 2rem;
+  }
 
-td.table-title strike {
-}
+  td.table-data-last {
+    text-align: right;
+    padding-right: 1rem;
+    white-space: nowrap;
+  }
 
-td.table-data {
-  color: #B81315;
-  padding-right: 20px;
-}
+  // "Detaily lodi"
+  table.search_result {
+    //width: 100%;
+  }
 
-td.table-data-last {
-  color: #B81315;
-  text-align: right;
-}
+  // for some weird reason this table is not wrapped in box_content div
+  table.price-info {
+    width: 100%;
+    padding-left: 8px;
+    padding-right: 8px;
 
-table.search_result { /*width: 100%;*/
-}
+    input[name='discount'] {
+      max-width: 7rem;
+    }
 
-/*table.search_result td { vertical-align: top; }*/
+    // this table has data and title columns swapped.. would you believe that???
+    .table-data {
+      font-weight: 700;
+    }
 
-table.booking-detail {
-  width: 100%;
-}
+    .table-title {
+      font-weight: normal;
+    }
+  }
 
-table.price-info {
-  width: 100%;
-}
+  div.total-price-title {
+    line-height: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    /*color:#0b5eb5;*/
+    font-weight: bold;
+    float: left;
+    width: 200px;
+  }
 
-div.total-price-title {
-  line-height: 20px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  /*color:#0b5eb5;*/
-  font-weight: bold;
-  float: left;
-  width: 200px;
-}
+  div.total-price {
+    line-height: 20px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #B81315;
+    font-weight: bold;
+    float: right;
+    width: 200px;
+    text-align: right
+  }
 
-div.total-price {
-  line-height: 20px;
-  margin-top: 0;
-  margin-bottom: 10px;
-  color: #B81315;
-  font-weight: bold;
-  float: right;
-  width: 200px;
-  text-align: right
-}
+  // =================== client info =========================
+  div.box_title {
+    width: 100%;
+  }
 
-.box_content_images {
-  border-bottom: solid 1px #0b5eb5;
-  margin-bottom: 10px;
-  padding-bottom: 5px;
-}
+  div#contact_info_content {
+    div#advance_contact_info_content {
+      .box_content {
+        // you wonder what this class does here?? me too...
+        table.search_result {
+          width: 100%;
 
-.box_content_images_main {
-  float: left;
-  width: 446px;
-  height: 336px;
-  overflow: hidden;
-}
+          // form in yacht details page
+          .formField {
+            width: auto;
+          }
 
-.box_content_images_side {
-  float: right;
-  width: 216px;
-  height: 336px;
-  overflow: hidden;
-}
+        }
+      }
+    }
+  }
 
-.vr {
-  float: left;
-  width: 446px;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
+  // =================== booking actions ======================
+  #booking_actions_content {
+    text-align: center;
+    // poslat nabidku
+    .btn.btn-default.action-button {
+      background-color: @primary-color;
+    }
 
-.vr A {
-  display: block;
-  margin-left: 14px;
-  background-color: #153954;
-  color: #D2D1D1;
-  line-height: 24px;
-  width: 446px;
-  text-align: center;
-}
+    // prednost pri koupi
+    .btn.btn-warning.action-button {
+      background-color: @secondary-color;
+    }
 
-.vr A:hover {
-  text-decoration: none;
-  color: #B9024D;
-}
+    // prima objednavka
+    .btn.btn-success.action-button {
+      background-color: @blue-900;
+    }
+  }
 
-.more_pic {
-  float: right;
-  width: 216px;
-  padding-top: 10px;
-}
+  // ============= no idea where this belongs to ==============
+  .box_content_images {
+    border-bottom: solid 1px #0b5eb5;
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+  }
 
-.more_pic A {
-  display: block;
-  margin-right: 14px;
-  background-color: #dddddd;
-  line-height: 24px;
-  width: 216px;
-  text-align: center;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-  color: #000000;
-}
+  .box_content_images_main {
+    float: left;
+    width: 446px;
+    height: 336px;
+    overflow: hidden;
+  }
 
-.more_pic A:hover {
-  text-decoration: none;
-  color: #0b5eb5;
-}
+  .box_content_images_side {
+    float: right;
+    width: 216px;
+    height: 336px;
+    overflow: hidden;
+  }
 
-table.prices {
-  width: 100%;
-}
+  .vr {
+    float: left;
+    width: 446px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
 
-table.prices th {
-  text-align: center;
-  background-color: #dddddd;
-}
+  .vr a {
+    display: block;
+    margin-left: 14px;
+    background-color: #153954;
+    color: #D2D1D1;
+    line-height: 24px;
+    width: 446px;
+    text-align: center;
+  }
 
-table.prices td.price {
-  font-weight: bold;
-  border-left: solid 1px #dddddd;
-}
+  .vr a:hover {
+    text-decoration: none;
+    color: #B9024D;
+  }
 
-table.prices td {
-  border-right: solid 1px #dddddd;
-  border-bottom: solid 1px #dddddd;
-  text-align: center;
-  line-height: 20px;
-  font-size: 11px;
-}
+  .more_pic {
+    float: right;
+    width: 216px;
+    padding-top: 10px;
+  }
 
-table.yachts {
-  width: 100%;
-}
+  .more_pic a {
+    display: block;
+    margin-right: 14px;
+    background-color: #dddddd;
+    line-height: 24px;
+    width: 216px;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    color: #000000;
+  }
 
-table.yachts th {
-  text-align: center;
-  background-color: #153954;
-  line-height: 20px;
-  font-size: 11px;
-}
+  .more_pic a:hover {
+    text-decoration: none;
+    color: #0b5eb5;
+  }
 
-table.yachts td.yachts {
-  font-weight: bold;
-  text-align: left;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-left: solid 1px #153954;
-}
+  table.prices {
+    width: 100%;
+  }
 
-table.yachts td.price {
-  text-align: right;
-  padding-left: 5px;
-  padding-right: 5px;
-}
+  table.prices th {
+    text-align: center;
+    background-color: #dddddd;
+  }
 
-table.yachts td {
-  border-right: solid 1px #153954;
-  border-bottom: solid 1px #153954;
-  text-align: center;
-}
+  table.prices td.price {
+    font-weight: bold;
+    border-left: solid 1px #dddddd;
+  }
 
+  table.prices td {
+    border-right: solid 1px #dddddd;
+    border-bottom: solid 1px #dddddd;
+    text-align: center;
+    line-height: 20px;
+    font-size: 11px;
+  }
 
-/* YACH LIST (our fleet - yachts) */
-div.wbm_yachtlist_modelkind {
-  font-weight: bold;
-  font-size: 14px;
-}
+  table.yachts {
+    width: 100%;
+  }
 
-div.wbm_yachtlist_box {
-  float: left;
-  width: 24%;
-  text-align: center;
-  margin-bottom: 2px;
-  min-height: 120px;
-}
+  table.yachts th {
+    text-align: center;
+    background-color: #153954;
+    line-height: 20px;
+    font-size: 11px;
+  }
 
-div.wbm_yachtlist_image {
-}
+  table.yachts td.yachts {
+    font-weight: bold;
+    text-align: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-left: solid 1px #153954;
+  }
 
-div.wbm_yachtlist_info {
-}
+  table.yachts td.price {
+    text-align: right;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 
-// form in yacht details page
-.formField {
-  width: 200px;
+  table.yachts td {
+    border-right: solid 1px #153954;
+    border-bottom: solid 1px #153954;
+    text-align: center;
+  }
+
+  /* YACH LIST (our fleet - yachts) */
+  div.wbm_yachtlist_modelkind {
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  div.wbm_yachtlist_box {
+    float: left;
+    width: 24%;
+    text-align: center;
+    margin-bottom: 2px;
+    min-height: 120px;
+  }
+
+  div.wbm_yachtlist_image {
+  }
+
+  div.wbm_yachtlist_info {
+  }
 }
