@@ -1,0 +1,101 @@
+
+.rare {
+  float: right;
+  margin-top: 3px;
+  background: #990000;
+  border: solid 4px #990000;
+}
+
+.periodic {
+  float: right;
+  margin-top: 3px;
+  background: #FFA500;
+  border: solid 4px #FFA500;
+}
+
+.realtime {
+  float: right;
+  margin-top: 3px;
+  background: #4A9F94;
+  border: solid 4px #4A9F94;
+}
+
+option.rare {
+  float: right;
+  margin-top: 1px;
+  margin-left: 3px;
+  background: none;
+  border: none;
+  border-left: solid 8px #990000;
+  width: 100%;
+}
+
+option.periodic {
+  float: right;
+  margin-top: 1px;
+  margin-left: 3px;
+  background: none;
+  border: none;
+  border-left: solid 8px #FFA500;
+  width: 100%;
+}
+
+option.realtime {
+  float: right;
+  margin-top: 1px;
+  margin-left: 3px;
+  background: none;
+  border: none;
+  border-left: solid 8px #4A9F94;
+  width: 100%;
+}
+
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  option.rare {
+    float: right;
+    margin-top: 1px;
+    margin-left: 3px;
+    background: none;
+    border: none; /*border-left: solid 8px #990000;*/
+    width: 100%;
+    background-color: #990000;
+  }
+
+  option.periodic {
+    float: right;
+    margin-top: 1px;
+    margin-left: 3px;
+    background: none;
+    border: none; /*border-left: solid 8px #FFA500;*/
+    width: 100%;
+    background-color: #FFA500;
+  }
+
+  option.realtime {
+    float: right;
+    margin-top: 1px;
+    margin-left: 3px;
+    background: none;
+    border: none; /*border-left: solid 8px #4A9F94;*/
+    width: 100%;
+    background-color: #4A9F94;
+  }
+}
+
+
+@media screen and (min-color-index:0) and(-webkit-min-device-pixel-ratio:0) {
+  option.rare{float:right; margin-top:1px; margin-left:3px; background: none; border: none; /*border-left: solid 8px #990000;*/  width: 100%; background-color: #990000; }
+  option.periodic{float:right; margin-top:1px; margin-left:3px; background: none;  border: none; /*border-left: solid 8px #FFA500;*/ width: 100%; background-color: #FFA500; }
+  option.realtime{float:right; margin-top:1px; margin-left:3px; background: none;  border: none; /*border-left: solid 8px #4A9F94;*/ width: 100%; background-color: #4A9F94; }
+}
+
+div.legend {}
+div.legend_border {float:left; border: solid 1px black; margin-right: 5px;}
+div.legend_border div {width:12px; height: 12px; line-height: 10px;}
+div.legend_border div.legend_rare {background: #990000;}
+div.legend_border div.legend_periodic {background: #FFA500;}
+div.legend_border div.legend_realtime {background: #4A9F94;}
+
+
