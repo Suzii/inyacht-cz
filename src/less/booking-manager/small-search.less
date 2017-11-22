@@ -1,87 +1,91 @@
-
 /* SMALL SEARCH FORM */
 div.wbm_ssf_box {
-}
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  //height: 44px;
+  align-items: center;
 
-div.wbm_ssf_box div.title {
-  font-weight: bold;
-}
+  padding: 4px;
+  background-color: @primary-color;
+  color: @white;
 
-div.wbm_ssf_box div.left_data { /*margin-bottom:5px; float: left; width:50px; background-color: red;*/
-}
+  // hide redundant elements.. i know, this is super-crazy hack...
+  // oh, how much I hate the styling of iframes...
+  .title,
+  :nth-child(16),
+  :nth-child(17),
+  :nth-child(19),
+  :nth-child(21) {
+    display: none;
+  }
 
-div.wbm_ssf_box div.right_data { /*margin-bottom:5px; float: left; width:50px; background-color: yellow;*/
-}
+  & > .clear:nth-of-type(2n - 1) {
+    flex-basis: 100%;
+  }
 
-div.wbm_ssf_box div.right_data #filter_base {
-  .form-control();
-}
+  .left_data {
+    padding-bottom: 1.5rem;
 
-div.wbm_ssf_box div.submit {
-  margin-bottom: 5px;
-  margin-top: 5px;
-}
+    .cell {
+      line-height: 36px;
+      font-weight: 700;
+      padding-left: 0.4rem;
+      padding-right: 0.4rem;
+    }
+  }
 
-div.wbm_ssf_box div.advancedsearch {
-  margin-bottom: 5px;
-}
+  .right_data {
+    padding-bottom: 1.5rem;
+    padding-right: 1.5rem;
+    input,
+    select {
+      .form-control();
+      padding: 0.2rem;
+      display: inline-block;
+      width: 16rem;
+    }
 
-div.wbm_ssf_box div.clear {
-  display: none;
-}
+    #filter_country,
+    #filter_region,
+    #filter_base {
+      width: 10rem;
+    }
 
-div.wbm_ssf_box #wbm_ssf_box_clearAfterSubmit {
-}
+    #filter_year_id {
+      width: 7rem;
+    }
 
-div.bottomDiv {
-  position: fixed;
-  z-index: 1000;
-  bottom: 0;
-  right: 10px;
-  height: 225px;
-  width: 200px;
-  background-color: #ffda93;
-  border: 1px double black;
-}
+    #filter_month_id,
+    #filter_date_id,
+    #filter_duration {
+      width: 5rem;
+    }
+  }
 
-div.scrollDiv {
-  position: relative;
-  height: 175px;
-  width: 200px;
-  overflow: auto;
-  background-color: #fbf9ef;
-}
+  .submit {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    input[type='submit'] {
+      .btn();
+      background-color: @secondary-color;
+      color: @white;
+      font-weight: 700;
+      &:hover {
+        color: @blue-900;
+      }
+    }
+  }
 
-div.med_warning {
-  color: orange;
-  font-weight: bold;
-}
-
-div.high_warning {
-  color: red;
-  font-weight: bold;
-}
-
-td.base {
-  color: #B81315;
-  font-weight: bold;
-  background: #DDDDFF;
-}
-
-div.error {
-  color: red;
-  font-size: 12px;
-  border: 2px solid red;
-  padding: 3px;
-  margin-bottom: 10px;
-  font-weight: bold;
-}
-
-div.info {
-  color: green;
-  font-size: 12px;
-  border: 2px solid green;
-  padding: 3px;
-  margin-bottom: 10px;
-  font-weight: bold;
+  .advancedsearch {
+    a {
+      .btn();
+      background-color: @white;
+      color: @primary-color;
+      font-weight: 700;
+      &:hover {
+        color: @blue-900;
+      }
+    }
+  }
 }
