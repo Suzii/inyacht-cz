@@ -16,22 +16,15 @@ block content
     .container-fluid.no-padding
         .row
             .col-sm-12
-
-                iframe.booking-manager__container--large(
-                width="100%"
-                height="155"
-                frameborder="0"
-                scrolling="auto"
-                src="https://www.booking-manager.com/wbm2/page.html?companyid=2957&setlang=cs&view=SmallSearchForm&target=_blank&customCssPath=" + bookingCss
-                allowTransparency="true"
-                )
-                br
-
-                a(
-                href="https://www.booking-manager.com"
-                style="color:#9999;text-decoration:none;font-size:10px;font-family:arial"
-                ) Yacht charter availability powered by booking-manager.com
-
+                .booking-manager__container--small
+                    iframe(
+                        width="100%"
+                        height="110"
+                        frameborder="0"
+                        scrolling="auto"
+                        src="https://www.booking-manager.com/wbm2/page.html?companyid=2957&setlang=cs&view=SmallSearchForm&target=_blank&customCssPath=https://inyacht-preview.herokuapp.com/css/booking-manager-small.css"
+                        allowTransparency="true"
+                        )
     .container
         .row
             .col-sm-12

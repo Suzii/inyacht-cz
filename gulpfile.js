@@ -16,6 +16,7 @@ gulp.task('less', function () {
     return gulp.src([
       SOURCE_DIR + '/less/styles.less',
       SOURCE_DIR + '/less/oops.less',
+      SOURCE_DIR + '/less/booking-manager-small.less',
       SOURCE_DIR + '/less/booking-manager.less'
     ])
         .pipe(less())

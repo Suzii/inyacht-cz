@@ -1,0 +1,37 @@
+// fonts
+@import url("https://fonts.googleapis.com/css?family=Cabin|Raleway:400,600,800&subset=latin-ext");
+@import "custom-bootstrap/custom-bootstrap.less";
+@import "constants.less";
+
+@bm-lineheight: 20px;
+
+* {
+  font-family: @font-family-base, @font-family-sans-serif;
+  font-size: @font-size-base;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+label.ellipsis {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: inline-block;
+}
+
+input, select {
+  .form-control();
+  display: inline-block;
+  width: inherit;
+}
+
+@import "booking-manager/legend.less";
+@import "./booking-manager/small-search.less";
