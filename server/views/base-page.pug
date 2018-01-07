@@ -1,5 +1,9 @@
 extends page-layout
 include mixins/coverImage
+include mixins/headerMetadata
+
+block append meta
+    +headerMetadata(item)
 
 block content
     +coverImage(item.pCoverPhoto.value[0].url, item.pCoverPhoto.value[0].description)

@@ -27,7 +27,7 @@ html(lang="en")
 
         block scripts
             // only render smartsupp when in production
-            if !debug
+            if (!process.env.LOCAL)
                 script.
                   <!-- Smartsupp Live Chat script -->
                   var _smartsupp = _smartsupp || {};

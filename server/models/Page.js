@@ -31,6 +31,23 @@ class Page extends ContentItem {
           return 'friendlyUrl';
         }
 
+        // metadata
+        if (fieldName === 'metadata__meta_title') {
+          return 'metaTitle';
+        }
+
+        if (fieldName === 'metadata__meta_description') {
+          return 'metaDescription';
+        }
+
+        if (fieldName === 'metadata__meta_keywords') {
+          return 'metaKeywords';
+        }
+
+        if (fieldName === 'metadata__meta_preview_image') {
+          return 'metaPreviewImage';
+        }
+
         return fieldName;
       }),
       linkResolver: (link) => link.type === 'page' ? link.url_slug : undefined,

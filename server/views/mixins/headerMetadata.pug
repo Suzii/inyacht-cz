@@ -1,0 +1,19 @@
+mixin headerMetadata(metadata)
+    title InYacht - #{metadata.metaTitle.value}
+    meta(name="description", content=metadata.metaDescription.value)
+    meta(name="keywords", content=metadata.metaKeywords.value)
+
+    meta(property="og:title", content=metadata.metaTitle.value)
+    meta(property="og:description" content=metadata.metaDescription.value)
+    meta(property="og:type", content="website")
+    meta(property="og:url", content=process.env.LIVE_DOMAIN)
+
+    if (metadata.metaPreviewImage.value.length)
+        meta(property="og:image", content=metadata.metaPreviewImage.value[0].url)
+        meta(name="twitter:image" content=metadata.metaPreviewImage.value[0].url)
+        meta(name="twitter:card" content=metadata.metaPreviewImage.value[0].description)
+
+    meta(name="twitter:site" content="@TODO")
+    meta(name="twitter:creator" content="@TODO")
+    meta(name="twitter:title" content=metadata.metaTitle.value)
+    meta(name="twitter:description" content=metadata.metaDescription.value)

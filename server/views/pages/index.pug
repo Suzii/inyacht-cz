@@ -1,5 +1,9 @@
 extends ../page-layout
 include ../mixins/newsPostPreview
+include ../mixins/headerMetadata
+
+block append meta
+    +headerMetadata(item)
 
 block content
     .container-fluid.no-padding
