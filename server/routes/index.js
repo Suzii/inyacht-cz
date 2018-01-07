@@ -51,6 +51,21 @@ router.get(sitemap.search.route, (req, res, next) => {
     .catch(handleServerError);
 });
 
+router.post(sitemap.search.route, (req, res, next) => {
+  let params = '';
+  for (let obj in req.body) {
+    if (obj !== 'controllerPage') {
+      params = `${params}${obj}=${req.body[obj]}&`;
+    }
+  }
+
+  getSearch()
+    .then(response => {
+      res.render(sitemap.search.view, getViewModel(sitemap.search.id, response.item, { params }));
+    })
+    .catch(handleServerError);
+});
+
 router.get(sitemap.contact.route, (req, res, next) => {
   getContact()
     .then(response => {
@@ -94,6 +109,7 @@ const handleServerError = (err) => {
 };
 
 router.get("*", (req, res, next) => {
+  console.error('Page not found', req.url);
   res.render('pages/oops',  getViewModel(sitemap.oops.id, null, { error: '404 - page not found' }));
 });
 

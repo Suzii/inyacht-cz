@@ -1,12 +1,12 @@
 extends ../base-page
 
 block more
-    iframe.booking-manager__container--large(
+    iframe.booking-manager__container--large#vysledky.navigable-element(
         width="100%"
         height="1000"
         frameborder="0"
         scrolling="auto"
-        src="https://www.booking-manager.com/wbm2/page.html?companyid=2957&setlang=cs&customCssPath=" + bookingCss
+        src="https://www.booking-manager.com/wbm2/page.html?" + (params || "companyid=2957&setlang=cs&customCssPath=" + bookingCss)
         allowTransparency="true"
     )
     br

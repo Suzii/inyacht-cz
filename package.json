@@ -24,15 +24,15 @@
   },
   "devDependencies": {
     "@types/jquery": "^3.2.17",
-    "awesome-typescript-loader": "^3.2.3",
+    "awesome-typescript-loader": "^3.4.1",
     "gulp": "^3.9.1",
-    "gulp-less": "^3.3.0",
+    "gulp-less": "^3.4.0",
     "gulp-watch": "^4.3.11",
-    "node-fetch": "^1.7.2",
-    "nodemon": "^1.12.1",
-    "source-map-loader": "^0.2.1",
-    "typescript": "^2.4.2",
-    "webpack": "^3.5.5",
+    "node-fetch": "^1.7.3",
+    "nodemon": "^1.14.8",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^2.6.2",
+    "webpack": "^3.10.0",
     "webpack-stream": "^4.0.0",
     "xmlhttprequest": "^1.8.0"
   }
