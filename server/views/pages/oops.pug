@@ -20,18 +20,17 @@ html(lang="en")
                     a(href="/kontakt")  Napiste nam
                     | a reknete nasim ajtakum co nefunguje
 
-                if (debug || process.env.local)
+                if (error && (debug || process.env.local))
                     .oops-page__reason
                         pre
                             | #{JSON.stringify(error, null, 4)}
 
         block scripts
-            // only render smartsupp when in production
-            if (!process.env.LOCAL)
+            if (process.env.ALLOW_CHAT == 'true')
                 script.
                   <!-- Smartsupp Live Chat script -->
                   var _smartsupp = _smartsupp || {};
-                  _smartsupp.key = '0982aa6f4a5c94c6b556f924c00844758c9cabdd';
+                  _smartsupp.key = "#{process.env.SMARTSUPP_KEY}";
                   window.smartsupp || (function (d) {
                     var s, c, o = smartsupp = function () {
                       o._.push(arguments)
