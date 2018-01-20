@@ -1,12 +1,31 @@
 extends ../base-page
-include ../mixins/invoiceData
-include ../mixins/contactData
+include ../mixins/social-facebook
+include ../mixins/social-instagram
+include ../mixins/social-twitter
 
 block more
     .row
-        .col-xs-12.col-sm-6
-            h3 #{item.contactDataSectionTitle.value}
-            +contactData(item.contactData[0])
-        .col-xs-12.col-sm-6
-            h3 #{item.invoiceDataSectionTitle.value}
-            +invoiceData(item.invoiceData[0])
+        .col-xs-12.text-center.contact-page__main-contacts
+            p
+                a(href=item.contactData[0].email.value) #{item.contactData[0].email.value}
+            p #{item.contactData[0].phoneNumber.value}
+
+    .row
+        .col-xs-12.text-center
+            +social-facebook(item.contactData[0], 35, "page")
+            +social-instagram(item.contactData[0], 35, "page")
+            +social-twitter(item.contactData[0], 35, "page")
+
+    .row
+        .col-xs-12.text-center.contact-page__invoice-data.lead
+            address
+                strong #{item.invoiceData[0].companyName.value}
+                br
+                | #{item.invoiceData[0].addressStreet.value}
+                br
+                | #{item.invoiceData[0].addressCity.value}
+                br
+                | IČ: #{item.invoiceData[0].ic.value}
+                br
+                | DIČ: #{item.invoiceData[0].dic.value}
+
