@@ -13,7 +13,6 @@ const getAboutUs = () => getItemCached('about_us', () => getItem('about_us'));
 const getContact = () => getItemCached('contact', () => getItem('contact'));
 const getSearch = () => getItemCached('search', () => getItem('search'));
 const getFaq = () => getItemCached('frequently_asked_questions', () => getItem('frequently_asked_questions'));
-const getNews = () => getItemCached('news_page', () => getItem('news_page'));
 const getNewsPost = (codename) => getItemCached(codename, () => getItem(codename));
 
 const getNewsPostsPreviewsKcRequest = () => {
@@ -37,7 +36,6 @@ module.exports = {
   getContact,
   getSearch,
   getFaq,
-  getNews,
   getNewsPost,
   getNewsPostsPreviews,
 };

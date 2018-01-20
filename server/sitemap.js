@@ -5,8 +5,8 @@ const sitemap = {
     route: '/',
     view: 'pages/index',
     parentRouteId: null,
-    title: 'InYacht',
-    menuItem: 'InYacht',
+    title: 'Domů',
+    menuItem: 'Domů',
     children: [],
   },
   aboutUs: {
@@ -38,11 +38,11 @@ const sitemap = {
   },
   faq: {
     id: 'faq',
-    route: '/faq',
+    route: '/caste-otazky',
     view: 'pages/yachting/faq',
     parentRouteId: 'yachting',
-    title: 'Faq',
-    menuItem: 'Námořní jachting',
+    title: 'Časté otázky',
+    menuItem: 'Časté otázky',
     children: [],
   },
   news: {
@@ -64,7 +64,7 @@ const sitemap = {
     // children: [],
   },
   oops: {
-    id: 'weather',
+    id: 'oops',
     view: 'pages/oops',
     title: 'Oops',
   }

@@ -5,8 +5,8 @@ include ../mixins/contactData
 block more
     .row
         .col-xs-12.col-sm-6
-            h3 #{item.invoiceDataSectionTitle.value}
-            +invoiceData(item.invoiceData[0])
-        .col-xs-12.col-sm-6
             h3 #{item.contactDataSectionTitle.value}
             +contactData(item.contactData[0])
+        .col-xs-12.col-sm-6
+            h3 #{item.invoiceDataSectionTitle.value}
+            +invoiceData(item.invoiceData[0])
