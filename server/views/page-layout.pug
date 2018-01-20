@@ -32,39 +32,33 @@ block body
     footer.footer
         .site-info#site-info
             .container
-                .row
-                    .col-md-6.col-sm-6.col-xs-12.sitemap#sitemap
-                        .row.sitemap-row
-                            .col-sm-6.col-xs-6
-                                h4
-                                    a(href=sitemap.index.route) #{sitemap.index.menuItem}
-                                h4
-                                    a(href=sitemap.aboutUs.route) #{sitemap.aboutUs.menuItem}
-                                h4
-                                    a(href=sitemap.search.route) #{sitemap.search.menuItem}
-                                h4
-                                    a(href=sitemap.faq.route) #{sitemap.faq.menuItem}
-                                h4
-                                    a(href=sitemap.contact.route) #{sitemap.contact.menuItem}
-                            .col-sm-6.col-xs-6.logo-container.hidden-xs
-                                img.logo(src="/img/footer-logo.png")
+                .row.sitemap-row#sitemap.logo-row
+                    .col-md-4.col-sm-4.col-xs-12
+                        h4
+                            a(href=sitemap.index.route) #{sitemap.index.menuItem}
+                        h4
+                            a(href=sitemap.aboutUs.route) #{sitemap.aboutUs.menuItem}
+                        h4
+                            a(href=sitemap.search.route) #{sitemap.search.menuItem}
+                        h4
+                            a(href=sitemap.faq.route) #{sitemap.faq.menuItem}
+                        h4
+                            a(href=sitemap.contact.route) #{sitemap.contact.menuItem}
 
-                    .col-md-6.col-sm-6.col-xs-12.contact#contact
-                        .row
-                            .col-xs-12.col-sm-6
-                                h4 Kontaktujte nás
-                                p
-                                    a(href="mailto:"+contactData.email.value).email #{contactData.email.value}
-                                p
-                                    | #{contactData.phoneNumber.value}
+                    .col-md-4.col-sm-4.col-xs-12.contact#contact.text-center
+                        h4 Kontaktujte nás
+                        p
+                            a(href="mailto:"+contactData.email.value).email #{contactData.email.value}
+                        p
+                            | #{contactData.phoneNumber.value}
 
-                            .col-xs-12.col-sm-6
-                                h4.hidden-xs Odebírejte novinky
-                                p
-                                    +social-facebook(contactData, 35, "footer")
-                                    +social-instagram(contactData, 35, "footer")
-                                    +social-twitter(contactData, 35, "footer")
+                        p
+                            +social-facebook(contactData, 35, "footer")
+                            +social-instagram(contactData, 35, "footer")
+                            +social-twitter(contactData, 35, "footer")
 
+                    .col-md-4.col-sm-4.hidden-xs.logo-container
+                        img.logo(src="/img/footer-logo.png")
 
         .copyright#copyright
             .container
