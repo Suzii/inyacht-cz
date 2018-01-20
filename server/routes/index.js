@@ -54,7 +54,7 @@ router.get(sitemap.search.route, (req, res, next) => {
 router.post(sitemap.search.route, (req, res, next) => {
   let params = '';
   for (let obj in req.body) {
-    if (obj !== 'controllerPage') {
+    if (obj !== 'controllerPage' && obj !== 'customCssPath' && obj !== 'setlang' && obj !== 'companyid') {
       params = `${params}${obj}=${req.body[obj]}&`;
     }
   }
