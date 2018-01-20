@@ -16,8 +16,8 @@ const getViewModel = (currentRouteId, item, more) => (Object.assign({
     email: {value: 'charter@inyacht.cz'},
     phoneNumber: {value: '+420 777 995 349'},
     facebookUrl: {value: 'http://facebook.com/InYacht'},
-    instagramUrl: {value: 'http://twitter.com/in_yacht'},
-    twitterUrl: {value: 'http://instagram.com/inyacht'},
+    instagramUrl: {value: 'http://twitter.com/inyacht'},
+    twitterUrl: {value: 'http://instagram.com/InYacht_CZ'},
   },
 
   item,

@@ -55,7 +55,7 @@ class NewsPost extends ContentItem {
 
         return fieldName;
       }),
-      linkResolver: (link) => link.type === 'news_post' ? `news/${link.url_slug}` : undefined,
+      linkResolver: (link) => link.type === 'news_post' ? `/novinky/${link.url_slug}` : undefined,
     })
   }
 }

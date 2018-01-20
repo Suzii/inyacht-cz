@@ -1,4 +1,5 @@
 const { ContentItem } = require('kentico-cloud-delivery-typescript-sdk');
+const sitemap = require('../sitemap');
 
 class QnA extends ContentItem {
   // public question: Fields.TextField;
@@ -15,7 +16,7 @@ class QnA extends ContentItem {
 
         return fieldName;
       }),
-      linkResolver: (link) => link.type === 'q___a' ? `/faq#${link.url_slug}` : undefined,
+      linkResolver: (link) => link.type === 'q___a' ? `/${sitemap.faq}#${link.url_slug}` : undefined,
     })
   }
 }
