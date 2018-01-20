@@ -20,14 +20,18 @@ block content
     .container-fluid.no-padding
         .row
             .col-sm-12
-                .booking-manager__container--small
-                    iframe#booking-manager(
-                    width="100%"
-                    frameborder="0"
-                    scrolling="auto"
-                    src=`https://www.booking-manager.com/wbm2/page.html?companyid=2957&setlang=cs&view=SmallSearchForm&target=_top&controllerPage=${controllerPage}&customCssPath=${bookingCssSm}`
-                    allowTransparency="true"
-                    )
+                .small-search__wrapper
+                    h1#cover-video-heading
+                        | #{item.coverVideoHeading.value}
+
+                    .booking-manager__container--small.text-center
+                        iframe#booking-manager(
+                        width="100%"
+                        frameborder="0"
+                        scrolling="auto"
+                        src=`https://www.booking-manager.com/wbm2/page.html?companyid=2957&setlang=cs&view=SmallSearchForm&target=_top&controllerPage=${controllerPage}&customCssPath=${bookingCssSm}`
+                        allowTransparency="true"
+                        )
     //.container
     //    .row
     //        .col-sm-12
@@ -48,8 +52,11 @@ block content
 block append scripts
     script.
       function positionSmallSearch() {
-        var bookingManagerIframeWrapper = $('.booking-manager__container--small');
+        var coverVideo = $('#cover-video');
+        var coverVideoHeading = $('#cover-video-heading');
         var bookingManagerIframe = $('iframe#booking-manager');
+        var bookingManagerIframeWrapper = $('.small-search__wrapper');
+
         var screenWidth = $(window).width();
 
         if (screenWidth < 560) {
@@ -63,12 +70,14 @@ block append scripts
 
         if (screenWidth < 768) {
           bookingManagerIframeWrapper.css({ top: 0, position: 'relative'});
+          coverVideoHeading.addClass('standalone');
         } else {
           var iframeHeight = bookingManagerIframeWrapper.height();
-          var videoHeight = document.getElementById('cover-video').offsetHeight;
+          var videoHeight = coverVideo.height();
 
           var positionTop = -(videoHeight / 2 + iframeHeight / 2);
           bookingManagerIframeWrapper.css({ top: positionTop, position: 'absolute' });
+          coverVideoHeading.removeClass('standalone');
         }
       };
 

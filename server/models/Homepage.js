@@ -8,6 +8,10 @@ class Homepage extends ContentItem {
           return 'firstPictureOfCoverVideo';
         }
 
+        if (fieldName === 'cover_video_heading') {
+          return 'coverVideoHeading';
+        }
+
         if (fieldName === 'cover_video') {
           return 'coverVideo';
         }
