@@ -16,5 +16,5 @@ block more
                 each faq in item.faqs
                     li.faq-list__item
                         +faqHeader(faq.question.value, faq.friendlyUrl.value)
-                        div.faq-list__item--answer.faq-list__item--answer
+                        div.faq-list__item--answer
                             | !{faq.answer.getHtml()}
