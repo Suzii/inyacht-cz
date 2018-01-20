@@ -1,5 +1,8 @@
 extends html-layout
 include mixins/navLink
+include mixins/social-facebook
+include mixins/social-instagram
+include mixins/social-twitter
 
 block body
     nav.navbar.navbar-default.navbar-fixed-top
@@ -53,9 +56,10 @@ block body
                             .col-xs-12.col-sm-6
                                 h4.hidden-xs Odebírejte novinky
                                 p
-                                    a(href=contactData.facebookUrl.value) Facebook&nbsp;|&nbsp;
-                                    a(href=contactData.instagramUrl.value) Instagram
-                                    a(href=contactData.twitterUrl.value) Twitter
+                                    +social-facebook(contactData, 35, "footer")
+                                    +social-instagram(contactData, 35, "footer")
+                                    +social-twitter(contactData, 35, "footer")
+
 
         .copyright#copyright
             .container

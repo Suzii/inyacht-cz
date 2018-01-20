@@ -13,3 +13,28 @@ ol.list-roman {
 .navigable-element {
   .fix-navbar-heading-interference();
 }
+
+#social-media-icon {
+  padding-right: 0.7rem;
+
+  // colors
+  &.footer {
+    fill: @blue-50;
+    stroke: @blue-50;
+
+    &:hover {
+      fill: @white;
+      stroke: @white;
+    }
+  }
+
+  &.header {
+    fill: @primary-color;
+    stroke: @primary-color;
+
+    &:hover {
+      fill: @secondary-color;
+      stroke: @secondary-color;
+    }
+  }
+}
