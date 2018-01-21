@@ -22,11 +22,11 @@ block body
                     +navLink(sitemap.faq)
                     +navLink(sitemap.contact)
                     li.hidden-xs
-                        +social-facebook(contactData, 20, "header")
+                        +social-facebook(contactData, "header")
                     li.hidden-xs
-                        +social-instagram(contactData, 20, "header")
+                        +social-instagram(contactData, "header")
                     li.hidden-xs
-                        +social-twitter(contactData, 20, "header")
+                        +social-twitter(contactData, "header")
     block content
 
     footer.footer
@@ -53,9 +53,9 @@ block body
                             | #{contactData.phoneNumber.value}
 
                         p
-                            +social-facebook(contactData, 35, "footer")
-                            +social-instagram(contactData, 35, "footer")
-                            +social-twitter(contactData, 35, "footer")
+                            +social-facebook(contactData, "footer")
+                            +social-instagram(contactData, "footer")
+                            +social-twitter(contactData, "footer")
 
                     .col-md-4.col-sm-4.hidden-xs.logo-container
                         img.logo(src="/img/footer-logo.png")
