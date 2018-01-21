@@ -9,6 +9,7 @@ html(lang="en")
 
         link(rel="icon", href="/img/favicon.ico", type="image/x-icon")
         link(rel="shortcut icon", href="/img/favicon.ico", type="image/x-icon")
+        link(rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css")
         link(rel="stylesheet", href="/css/styles.css")
         block styles
     body(data-spy="scroll", data-target=".scrollspy")
@@ -17,6 +18,27 @@ html(lang="en")
         block scripts
             script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
             script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+            script(src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js")
+            script.
+              window.addEventListener("load", function () {
+                window.cookieconsent.initialise({
+                  "palette": {
+                    "popup": {
+                      "background": "#003d5c"
+                    },
+                    "button": {
+                      "background": "transparent",
+                      "border": "#5cc6fc",
+                      "text": "#5cc6fc"
+                    }
+                  },
+                  "content": {
+                    "message": "Tento web používá k poskytování služeb, personalizaci reklam a analýze návštěvnosti soubory cookie. Používáním tohoto webu s tím souhlasíte.",
+                    "dismiss": "Ok",
+                    "link": "Chci vědět víc"
+                  }
+                })
+              });
             script(src="/js/bundle.js")
             script.
                 $(window).scroll(function () {
