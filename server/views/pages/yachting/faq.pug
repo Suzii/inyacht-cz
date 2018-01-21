@@ -1,6 +1,4 @@
 extends ../../base-page
-include ../../mixins/faq-link
-include ../../mixins/faq-header
 
 block more
     .row
@@ -8,15 +6,22 @@ block more
             ol.faq-list
                 each faq in item.faqs
                     li.faq-list__item
-                        +faqLink(faq.question.value, faq.friendlyUrl.value)
+                        .faq-list__item--link
+                            a(href='#' + faq.friendlyUrl.value)
+                                | #{faq.question.value}
 
     .row
         .col-sm-12
             ol.faq-list
                 each faq in item.faqs
                     li.faq-list__item
-                        div.text-center
-                            img(src='/img/favicon.ico', height='40px')
-                        +faqHeader(faq.question.value, faq.friendlyUrl.value)
+                        div(id=faq.friendlyUrl.value).faq-list__item--question
+                            div.text-center
+                                a(href="#").up-link
+                                    img(src='/img/small-yacht.png', height='40px')
+                                    p Nahoru
+                            h4(name='#' + faq.friendlyUrl.value)
+                                | #{faq.question.value} &nbsp;
+
                         div.faq-list__item--answer
                             | !{faq.answer.getHtml()}

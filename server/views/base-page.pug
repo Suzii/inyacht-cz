@@ -11,9 +11,11 @@ block content
     .container
         .row
             .col-sm-12
-                h1.page-header #{item.pTitle.value}
+                h1.page-header
+                    | #{item.pTitle.value}
 
-                p.lead #{item.pLeadingParagraph.value}
+                p.lead
+                    | #{item.pLeadingParagraph.value}
 
 
         .row
