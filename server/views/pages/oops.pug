@@ -20,7 +20,7 @@ html(lang="en")
                     a(href="/kontakt")  Napiste nam
                     | a reknete nasim ajtakum co nefunguje
 
-                if (error && (debug || process.env.local))
+                if (error && (debug || process.env.local == 'true'))
                     .oops-page__reason
                         pre
                             | #{JSON.stringify(error, null, 4)}
