@@ -61,7 +61,7 @@ block append scripts
         } else {
           var iframeHeight = bookingManagerIframe.height();
           var videoHeight = coverVideo.height();
-          var positionTop = -(videoHeight / 2 + iframeHeight / 2) - coverVideoHeading.height();
+          var positionTop = -(videoHeight / 2 + iframeHeight / 2) - coverVideoHeading.outerHeight();
 
           coverVideoHeading.addClass('overlay');
           bookingManagerContainer.addClass('overlay');
