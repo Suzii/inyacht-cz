@@ -22,6 +22,12 @@ router.get('/webhook', (req, res, next) => {
   res.send('Webhook called, cache cleared...');
 });
 
+if (process.env.SITE_UNDER_CONSTRUCTION) {
+  router.get('*', (req, res, next) => {
+    let viewModel = getViewModel(sitemap.siteUnderConstruction.id, null);
+    res.render(sitemap.siteUnderConstruction.view, viewModel)
+  });
+}
 router.get(sitemap.index.route, (req, res, next) => {
   const homepagePromise = getHomepage();
   const newsPostsPreviewPromise = getNewsPostsPreviews();
@@ -108,7 +114,7 @@ const handleServerError = (err) => {
   res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
 };
 
-router.get("*", (req, res, next) => {
+router.get('*', (req, res, next) => {
   console.error('Page not found', req.url);
   res.render('pages/oops',  getViewModel(sitemap.oops.id, null, { error: '404 - page not found' }));
 });

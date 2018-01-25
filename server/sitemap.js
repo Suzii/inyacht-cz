@@ -67,7 +67,12 @@ const sitemap = {
     id: 'oops',
     view: 'pages/oops',
     title: 'Oops',
-  }
+  },
+  siteUnderConstruction: {
+    id: 'siteUnderConstruction',
+    view: 'pages/site-under-construction',
+    title: 'Jiz brzy',
+  },
 };
 
 module.exports = sitemap;

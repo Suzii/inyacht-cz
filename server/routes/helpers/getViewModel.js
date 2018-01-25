@@ -20,7 +20,7 @@ const getViewModel = (currentRouteId, item, more) => (Object.assign({
     twitterUrl: {value: 'http://instagram.com/InYacht_CZ'},
   },
 
-  item,
+  item: item,
 }, more));
 
 module.exports = getViewModel;
