@@ -22,7 +22,7 @@ router.get('/webhook', (req, res, next) => {
   res.send('Webhook called, cache cleared...');
 });
 
-if (process.env.SITE_UNDER_CONSTRUCTION) {
+if (process.env.SITE_UNDER_CONSTRUCTION == 'true') {
   router.get('*', (req, res, next) => {
     let viewModel = getViewModel(sitemap.siteUnderConstruction.id, null);
     res.render(sitemap.siteUnderConstruction.view, viewModel)

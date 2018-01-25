@@ -16,7 +16,7 @@
     "dotenv": "^4.0.0",
     "dotenv-safe": "^4.0.4",
     "express": "~4.15.2",
-    "kentico-cloud-delivery-typescript-sdk": "^2.0.3",
+    "kentico-cloud-delivery-typescript-sdk": "^2.3.3",
     "moment": "^2.19.1",
     "morgan": "~1.8.1",
     "pug": "~2.0.0-beta11",

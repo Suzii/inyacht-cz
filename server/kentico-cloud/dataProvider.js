@@ -1,11 +1,13 @@
 const deliveryClient = require('./deliveryClient');
 const { getItemCached } = require('../utils/cache');
+const { translateAssetUrls } = require('../utils/translateAssetUrls');
 
 const getItem = (codename) => {
   console.log('KC API: ', codename);
   return deliveryClient.item(codename)
     .get()
-    .toPromise();
+    .toPromise()
+    .then(translateAssetUrls);
 };
 
 const getHomepage = () => getItemCached('homepage', () => getItem('homepage'));
