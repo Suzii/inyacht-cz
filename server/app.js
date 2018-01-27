@@ -2,6 +2,7 @@ const sslRedirect = require('heroku-ssl-redirect');
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
+const robots = require('express-robots-txt');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
@@ -18,6 +19,7 @@ app.set('view engine', 'pug');
 app.locals.moment = require('moment');
 
 app.use(favicon(path.join(__dirname, './../public/img', 'favicon.ico')));
+app.use(robots({UserAgent: '*', Disallow: '/img/', CrawlDelay: '5', Sitemap: 'https://inyacht.cz/sitemap.xml'}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
