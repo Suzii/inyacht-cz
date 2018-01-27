@@ -17,6 +17,7 @@ app.use(sslRedirect());
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'pug');
 app.locals.moment = require('moment');
+app.locals.pretty = process.env.NODE_ENV === 'develop';
 
 app.use(favicon(path.join(__dirname, './../public/img', 'favicon.ico')));
 app.use(robots({UserAgent: '*', Disallow: '/img/', CrawlDelay: '5', Sitemap: 'https://inyacht.cz/sitemap.xml'}));
