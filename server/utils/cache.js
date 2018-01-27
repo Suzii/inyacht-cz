@@ -1,19 +1,18 @@
-var debug = require('debug')('inyacht-cz:server');
-
 let cache = {};
+
 const clearCache = () => {
   cache = {};
-  debug('Cache cleared...');
+  console.log('Cache cleared...');
 };
 
 const getItemCached = (cacheKey, getValue) => {
-  if (debug) {
-    debug('Caching not allowed, sending request to KC.');
+  if (process.env.DELIVERY_PREVIEW === 'true') {
+    console.log('Working with delivery preview api, sending request to KC...');
     return getValue();
   }
 
   if (!cache[cacheKey]) {
-    debug('Cache miss: ', cacheKey);
+    console.log(`Cache miss for ${cacheKey}`);
     cache[cacheKey] = getValue();
   }
 

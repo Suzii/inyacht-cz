@@ -14,7 +14,7 @@ const deliveryClient = new DeliveryClient(
     projectId,
     typeResolvers,
     {
-      enablePreviewMode: process.env.DELIVERY_PREVIEW == 'true',
+      enablePreviewMode: process.env.DELIVERY_PREVIEW === 'true',
       previewApiKey: process.env.PREVIEW_API_KEY,
     }),
 );

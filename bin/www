@@ -3,9 +3,7 @@
 /**
  * Module dependencies.
  */
-require('dotenv-safe').load({
-  allowEmptyValues: true
-});
+require('dotenv').config();
 
 var app = require('../server/app');
 var debug = require('debug')('inyacht-cz:server');

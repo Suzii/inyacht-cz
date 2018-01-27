@@ -5,7 +5,7 @@
   "scripts": {
     "build-frontend": "gulp build-frontend",
     "start": "node ./bin/www",
-    "start-dev": "set DEBUG=inyacht-cz:* &nodemon ./bin/www",
+    "start-dev": "set NODE_ENV=develop&&nodemon ./bin/www",
     "start-frontend": "gulp start-frontend",
     "postinstall": "gulp build-frontend"
   },
@@ -14,7 +14,6 @@
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.3",
     "dotenv": "^4.0.0",
-    "dotenv-safe": "^4.0.4",
     "express": "~4.15.2",
     "kentico-cloud-delivery-typescript-sdk": "^2.3.3",
     "moment": "^2.19.1",

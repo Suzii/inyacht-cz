@@ -49,7 +49,7 @@ html(lang="en")
                     }
                 });
 
-            if (process.env.ALLOW_CHAT == 'true')
+            if (process.env.NODE_ENV === 'production' && config.allowChat)
                 script.
                     <!-- Smartsupp Live Chat script -->
                     var _smartsupp = _smartsupp || {};

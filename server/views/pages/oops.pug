@@ -20,13 +20,13 @@ html(lang="en")
                     a(href="/kontakt")  Napiste nam
                     | a reknete nasim ajtakum co nefunguje
 
-                if (error && (debug || process.env.local == 'true'))
+                if (error && process.env.NODE_ENV === 'develop')
                     .oops-page__reason
                         pre
                             | #{JSON.stringify(error, null, 4)}
 
         block scripts
-            if (process.env.ALLOW_CHAT == 'true')
+            if (process.env.NODE_ENV === 'production' && config.allowChat)
                 script.
                   <!-- Smartsupp Live Chat script -->
                   var _smartsupp = _smartsupp || {};

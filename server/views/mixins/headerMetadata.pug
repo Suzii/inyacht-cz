@@ -6,7 +6,7 @@ mixin headerMetadata(metadata)
     meta(property="og:title", content=metadata.metaTitle.value)
     meta(property="og:description" content=metadata.metaDescription.value)
     meta(property="og:type", content="website")
-    meta(property="og:url", content=process.env.LIVE_DOMAIN)
+    meta(property="og:url", content="https://inyacht.cz")
 
     if (metadata.metaPreviewImage.value.length)
         meta(property="og:image", content=metadata.metaPreviewImage.value[0].url)

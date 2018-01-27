@@ -22,7 +22,7 @@ router.get('/webhook', (req, res, next) => {
   res.send('Webhook called, cache cleared...');
 });
 
-if (process.env.SITE_UNDER_CONSTRUCTION == 'true') {
+if (process.env.SITE_UNDER_CONSTRUCTION === 'true') {
   router.get('*', (req, res, next) => {
     let viewModel = getViewModel(sitemap.siteUnderConstruction.id, null);
     res.render(sitemap.siteUnderConstruction.view, viewModel)
@@ -111,7 +111,7 @@ router.get(sitemap.newsPost.route, (req, res, next) => {
 
 const handleServerError = (err) => {
   console.error('Error:' + err);
-  res.render('pages/oops', { error: JSON.stringify(err, null, 4) });
+  res.render('pages/oops', { config: {}, error: JSON.stringify(err, null, 4) });
 };
 
 router.get('*', (req, res, next) => {

@@ -1,11 +1,16 @@
 const sitemap = require('../../sitemap');
-const debug = require('debug')('inyacht-cz:server');
+
+const liveDomain = 'https://inyacht.cz';
+const localhost = 'http://localhost:3000';
 
 const getViewModel = (currentRouteId, item, more) => (Object.assign({
-  debug: debug,
-  bookingCssLg: `${process.env.LIVE_DOMAIN}/css/booking-manager.css`,
-  bookingCssSm: `${process.env.LIVE_DOMAIN}/css/booking-manager-small.css`,
-  controllerPage: process.env.local ? 'http://localhost:3000/najit-lod' : `${process.env.LIVE_DOMAIN}/najit-lod`,
+  config: {
+    allowChat: false,
+  },
+
+  bookingCssLg: `${liveDomain}/css/booking-manager.css`,
+  bookingCssSm: `${liveDomain}/css/booking-manager-small.css`,
+  controllerPage: `${process.env.NODE_ENV === 'production' ? liveDomain : localhost}/najit-lod`,
 
   sitemap: sitemap,
   currentRouteId: sitemap[currentRouteId].id,
