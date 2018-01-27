@@ -1,3 +1,4 @@
+const sslRedirect = require('heroku-ssl-redirect');
 const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
@@ -8,6 +9,8 @@ const bodyParser = require('body-parser');
 const staticRouter = require('./routes/index');
 
 const app = express();
+// enable ssl redirect
+app.use(sslRedirect());
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
