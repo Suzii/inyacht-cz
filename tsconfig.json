@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "es6",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "outFile": "/public/js/bundle.js",
+    "sourceMap": true
+  },
+  "include": [
+    "src/js/**/*"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
