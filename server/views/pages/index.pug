@@ -10,8 +10,8 @@ block content
         .cover-video.no-padding#cover-video
             video(
             type="video/mp4"
-            src="/img/cover-video.mp4"
-            poster="/img/cover-poster.png"
+            src=item.coverVideo.value[0].url
+            poster=item.firstPictureOfCoverVideo.value[0].url
             loop
             autoplay
             muted
