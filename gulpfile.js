@@ -42,9 +42,15 @@ gulp.task('copy-assets', function () {
         .pipe(gulp.dest(OUTPUT_DIR + '/fonts'));
 });
 
+gulp.task('copy-pseudo-public', function () {
+  console.log('Copying filder __public__...');
+  gulp.src('./__public__/**/*')
+    .pipe(gulp.dest(OUTPUT_DIR));
+});
+
 gulp.task('watch', function () {
     gulp.watch(['src/less/**/*.less'], ['less']);
 });
 
 gulp.task('start-frontend', ['copy-assets', 'watch']);
-gulp.task('build-frontend', ['copy-assets', 'less', 'js']);
+gulp.task('build-frontend', ['copy-assets', 'copy-pseudo-public', 'less', 'js']);
