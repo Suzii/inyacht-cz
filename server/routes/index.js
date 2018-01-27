@@ -38,7 +38,7 @@ router.get(sitemap.index.route, (req, res, next) => {
       const postsResponse = responses[1];
       res.render(sitemap.index.view, getViewModel(sitemap.index.id, homepageResponse.item, { posts: postsResponse.items }))
     })
-    .catch(handleServerError);
+    .catch((err) => handleServerError(req, res, next, err));
 });
 
 router.get(sitemap.aboutUs.route, (req, res, next) => {
@@ -46,7 +46,7 @@ router.get(sitemap.aboutUs.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.aboutUs.view, getViewModel(sitemap.aboutUs.id, response.item));
     })
-    .catch(handleServerError);
+    .catch((err) => handleServerError(req, res, next, err));
 });
 
 router.get(sitemap.search.route, (req, res, next) => {
@@ -54,7 +54,7 @@ router.get(sitemap.search.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.search.view, getViewModel(sitemap.search.id, response.item));
     })
-    .catch(handleServerError);
+    .catch((err) => handleServerError(req, res, next, err));
 });
 
 router.post(sitemap.search.route, (req, res, next) => {
@@ -69,7 +69,7 @@ router.post(sitemap.search.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.search.view, getViewModel(sitemap.search.id, response.item, { params }));
     })
-    .catch(handleServerError);
+    .catch((err) => handleServerError(req, res, next, err));
 });
 
 router.get(sitemap.contact.route, (req, res, next) => {
@@ -77,7 +77,7 @@ router.get(sitemap.contact.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.contact.view, getViewModel(sitemap.contact.id, response.item));
     })
-    .catch(handleServerError);
+    .catch((err) => handleServerError(req, res, next, err));
 });
 
 router.get(sitemap.faq.route, (req, res, next) => {
@@ -85,7 +85,7 @@ router.get(sitemap.faq.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.faq.view, getViewModel(sitemap.faq.id, response.item));
     })
-    .catch(handleServerError);
+    .catch((err) => handleServerError(req, res, next, err));
 });
 
 router.get(sitemap.newsPost.route, (req, res, next) => {
@@ -93,7 +93,7 @@ router.get(sitemap.newsPost.route, (req, res, next) => {
     .then(response => {
       res.render(sitemap.newsPost.view, getViewModel(sitemap.newsPost.id, response.item));
     })
-    .catch(handleServerError);
+    .catch((err) => handleServerError(req, res, next, err));
 });
 
 // router.get(sitemap.news.route, (req, res, next) => {
@@ -106,12 +106,12 @@ router.get(sitemap.newsPost.route, (req, res, next) => {
 //       const postsResponse = responses[1];
 //       res.render(sitemap.news.view, getViewModel(sitemap.news.id, newsResponse.item, { posts: postsResponse.items }))
 //     })
-//     .catch(handleServerError);
+//     .catch((err) => handleServerError(req, res, next, err));
 // });
 
-const handleServerError = (err) => {
-  console.error('Error:' + err);
-  res.render('pages/oops', { config: {}, error: JSON.stringify(err, null, 4) });
+const handleServerError = (req, res, next, err) => {
+  console.error('Error', err);
+  res.render('pages/oops', { config: {}, error: err });
 };
 
 router.get('*', (req, res, next) => {
