@@ -6,7 +6,6 @@
 require('dotenv').config();
 
 var app = require('../server/app');
-var debug = require('debug')('inyacht-cz:server');
 var http = require('http');
 
 /**
@@ -87,5 +86,5 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
+  console.debug('Listening on ' + bind);
 }

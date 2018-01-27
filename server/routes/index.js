@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sitemap = require('../sitemap');
+const { sitemapXml } = require('./helpers/sitemapXml');
 const getViewModel = require('./helpers/getViewModel');
 const { convertToCodename } = require('./helpers/codename-url-slug-converters');
 const { clearCache } = require('../utils/cache');
@@ -15,12 +16,23 @@ const {
   getNewsPostsPreviews,
 } = require('../kentico-cloud/dataProvider');
 
-logMe = (data) => console.log('data:', JSON.stringify(data, null, 4));
-
+// clear cache every 4 hours and upon webhook trigger
+setInterval(clearCache, 4 * 60 * 60 * 1000);
 router.get('/webhook', (req, res, next) => {
   clearCache();
   res.send('Webhook called, cache cleared...');
 });
+
+router.get('/sitemap.xml', (req, res) => {
+  sitemapXml.toXML((err, xml) => {
+    if (err) {
+      return res.status(500).end();
+    }
+    res.header('Content-Type', 'application/xml');
+    res.send(xml);
+  });
+});
+
 
 if (process.env.SITE_UNDER_CONSTRUCTION === 'true') {
   router.get('*', (req, res, next) => {
@@ -116,7 +128,7 @@ const handleServerError = (req, res, next, err) => {
 
 router.get('*', (req, res, next) => {
   console.error('Page not found', req.url);
-  res.render('pages/oops',  getViewModel(sitemap.oops.id, null, { error: '404 - page not found' }));
+  res.render('pages/oops', getViewModel(sitemap.oops.id, null, { error: '404 - page not found' }));
 });
 
 module.exports = router;
