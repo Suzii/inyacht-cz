@@ -18,11 +18,11 @@ const getViewModel = (currentRouteId, item, more) => (Object.assign({
 
   // TODO: one day, this will be obtained from Kentico Cloud
   contactData: {
-    email: {value: 'charter@inyacht.cz'},
-    phoneNumber: {value: '+420 777 995 349'},
-    facebookUrl: {value: 'http://facebook.com/InYacht'},
-    instagramUrl: {value: 'http://twitter.com/inyacht'},
-    twitterUrl: {value: 'http://instagram.com/InYacht_CZ'},
+    email: { value: 'charter@inyacht.cz' },
+    phoneNumber: { value: '+420 777 995 349' },
+    facebookUrl: { value: 'http://facebook.com/InYacht' },
+    instagramUrl: { value: 'http://instagram.com/inyacht' },
+    twitterUrl: { value: 'http://twitter.com/InYacht_CZ' },
   },
 
   item: item,
