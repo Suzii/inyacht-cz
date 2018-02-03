@@ -32,3 +32,20 @@ block content
                         src=`https://www.booking-manager.com/wbm2/page.html?companyid=2957&setlang=cs&view=SmallSearchForm&target=_top&controllerPage=${controllerPage}&customCssPath=${bookingCssSm}`
                         allowTransparency="true"
                         )
+
+    .container
+        .row
+            .col-sm-12
+                h1#novinky.page-header.navigable-element #{item.newsPage[0].pTitle.value}
+
+                p.lead #{item.newsPage[0].pLeadingParagraph.value}
+
+        .row
+            .col-sm-12
+                | !{item.newsPage[0].pBody.getHtml()}
+
+
+        .row
+            .col-sm-12
+                each post in posts
+                    +newsPostPreview(post)

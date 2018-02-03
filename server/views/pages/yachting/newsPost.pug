@@ -6,18 +6,19 @@ block append meta
     +headerMetadata(item)
 
 block content
-    .container
-        .row
-            .col-sm-12
-                h1 #{item.pTitle.value}
-                p.text-muted #{moment(new Date(item.published.value)).format('DD.MM.YYYY')}
-                p.lead #{item.pLeadingParagraph.value}
-
     +coverImage(item.pCoverPhoto.value[0].url, item.pCoverPhoto.value[0].description)
 
     .container
         .row
             .col-sm-12
-                | !{item.pBody.getHtml()}
+                h1
+                    | #{item.pTitle.value}
+                p.text-muted
+                    | #{moment(new Date(item.published.value)).format('DD.MM.YYYY')}
+                p.lead
+                    | #{item.pLeadingParagraph.value}
 
-    block more
+    .container
+        .row
+            .col-sm-12
+                | !{item.pBody.getHtml()}

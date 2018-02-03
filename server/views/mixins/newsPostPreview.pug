@@ -1,8 +1,9 @@
 mixin newsPostPreview(post)
     .row
         .col-sm-2.hidden-xs
-            .news-post-preview__teaser-image--circle
-                img(alt=post.pCoverPhoto.value[0].description, src=post.pCoverPhoto.value[0].url)
+            .news-post-preview__wrapper
+                .news-post-preview__teaser-image--circle
+                    img(alt=post.pCoverPhoto.value[0].description, src=post.pCoverPhoto.value[0].url)
 
         .col-sm-10.col-xs-12
             h4
