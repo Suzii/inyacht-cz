@@ -20,7 +20,7 @@ const {
 setInterval(clearCache, 4 * 60 * 60 * 1000);
 router.get('/webhook', (req, res, next) => {
   clearCache();
-  res.send('Webhook called, cache cleared...');
+  res.sendStatus(200);
 });
 
 router.get('/sitemap.xml', (req, res) => {
