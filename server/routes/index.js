@@ -18,7 +18,7 @@ const {
 
 // clear cache every 4 hours and upon webhook trigger
 setInterval(clearCache, 4 * 60 * 60 * 1000);
-router.get('/webhook', (req, res, next) => {
+router.post('/webhook', (req, res, next) => {
   clearCache();
   res.sendStatus(200);
 });
