@@ -3,6 +3,7 @@ include mixins/navLink
 include mixins/social-facebook
 include mixins/social-instagram
 include mixins/social-twitter
+include mixins/logo-boat
 
 block body
     nav.navbar.navbar-default.navbar-fixed-top
@@ -58,7 +59,7 @@ block body
                             +social-twitter(contactData, "footer")
 
                     .col-md-4.col-sm-4.hidden-xs.logo-container
-                        img.logo(src="/img/footer-logo.png")
+                        +logo-boat("logo-boat__footer")
 
         .copyright#copyright
             .container

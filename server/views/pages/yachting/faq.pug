@@ -1,4 +1,5 @@
 extends ../../base-page
+include ../../mixins/logo-boat
 
 block more
     .row
@@ -18,7 +19,7 @@ block more
                         div(id=faq.friendlyUrl.value).faq-list__item--question
                             div.text-center
                                 a(href="#").up-link
-                                    img(src='/img/small-yacht.png', height='40px')
+                                    +logo-boat('', '40px')
                                     p Nahoru
                             h4(name='#' + faq.friendlyUrl.value)
                                 | #{faq.question.value} &nbsp;
