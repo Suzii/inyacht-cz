@@ -19,7 +19,7 @@ app.set('view engine', 'pug');
 app.locals.moment = require('moment');
 app.locals.pretty = process.env.NODE_ENV === 'develop';
 
-app.use(favicon(path.join(__dirname, './../public/img', 'favicon.ico')));
+app.use(favicon(path.join(__dirname, './../public', 'favicon.ico')));
 app.use(robots({UserAgent: '*', Disallow: '/img/', CrawlDelay: '5', Sitemap: 'https://inyacht.cz/sitemap.xml'}));
 app.use(logger('dev'));
 app.use(bodyParser.json());
