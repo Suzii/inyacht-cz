@@ -3,11 +3,19 @@ const { getItemCached } = require('../utils/cache');
 const { translateAssetUrls } = require('../utils/translateAssetUrls');
 
 const getItem = (codename) => {
-  console.log('KC API: ', codename);
+  console.info(`KC-API-get: '${codename}'`);
   return deliveryClient.item(codename)
     .get()
     .toPromise()
-    .then(translateAssetUrls);
+    .then(translateAssetUrls)
+    .then(response => {
+      console.info(`KC-API-received: '${codename}'`);
+
+      if (codename === 'frequently_asked_questions')
+        console.info(`KC-API-FAQ-10 ${response.item.faqs[9].question.value}`);
+
+      return response;
+    });
 };
 
 const getHomepage = () => getItemCached('homepage', () => getItem('homepage'));
@@ -23,7 +31,6 @@ const getNewsPostsPreviewsKcRequest = () => {
     .items()
     .type('news_post')
     .elementsParameter(['p__title', 'p__leading_paragraph', 'p__cover_photo', 'friendly_url', 'published'])
-    // .orderParameter('elements.last_modified', 1)
     .get()
     .toPromise();
 };
