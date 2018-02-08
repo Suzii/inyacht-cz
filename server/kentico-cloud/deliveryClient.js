@@ -9,7 +9,7 @@ const {
 const typeResolvers = require('./typeResolvers');
 
 const projectId = 'c93a27a6-8556-45f6-b5e0-6fa74415f3b2';
-const deliveryClient = new DeliveryClient(
+const getDeliveryClient = () => new DeliveryClient(
   new DeliveryClientConfig(
     projectId,
     typeResolvers,
@@ -19,6 +19,6 @@ const deliveryClient = new DeliveryClient(
     }),
 );
 
-module.exports = deliveryClient;
+module.exports = getDeliveryClient;
 
 

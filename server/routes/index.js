@@ -22,6 +22,12 @@ router.post('/webhook', (req, res, next) => {
   clearCache();
   res.sendStatus(200);
 });
+// just for local testing purposes
+router.get('/webhook', (req, res, next) => {
+  clearCache();
+  res.sendStatus(200);
+});
+
 
 router.get('/sitemap.xml', (req, res) => {
   sitemapXml.toXML((err, xml) => {

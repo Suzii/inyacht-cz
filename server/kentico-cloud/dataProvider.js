@@ -1,9 +1,9 @@
-const deliveryClient = require('./deliveryClient');
+const getDeliveryClient = require('./deliveryClient');
 const { getItemCached } = require('../utils/cache');
 const { translateAssetUrls } = require('../utils/translateAssetUrls');
 
 const getItem = (codename) => {
-  let query = deliveryClient.item(codename);
+  let query = getDeliveryClient().item(codename);
   console.log(`KC-API-query: ${query.toString()}`);
 
   return query
