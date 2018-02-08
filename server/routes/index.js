@@ -114,18 +114,18 @@ router.get(sitemap.newsPost.route, (req, res, next) => {
     .catch((err) => handleServerError(req, res, next, err));
 });
 
-// router.get(sitemap.news.route, (req, res, next) => {
-//   const newsPromise = getNews();
-//   const newsPostsPreviewPromise = getNewsPostsPreviews();
-//
-//   Promise.all([newsPromise, newsPostsPreviewPromise])
-//     .then(responses => {
-//       const newsResponse = responses[0];
-//       const postsResponse = responses[1];
-//       res.render(sitemap.news.view, getViewModel(sitemap.news.id, newsResponse.item, { posts: postsResponse.items }))
-//     })
-//     .catch((err) => handleServerError(req, res, next, err));
-// });
+router.get(sitemap.news.route, (req, res, next) => {
+  const newsPromise = getNews();
+  const newsPostsPreviewPromise = getNewsPostsPreviews();
+
+  Promise.all([newsPromise, newsPostsPreviewPromise])
+    .then(responses => {
+      const newsResponse = responses[0];
+      const postsResponse = responses[1];
+      res.render(sitemap.news.view, getViewModel(sitemap.news.id, newsResponse.item, { posts: postsResponse.items }))
+    })
+    .catch((err) => handleServerError(req, res, next, err));
+});
 
 const handleServerError = (req, res, next, err) => {
   console.error('Error', err);

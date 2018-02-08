@@ -4,10 +4,19 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1")
-        meta(name="description", content="TODO")
         meta(name="author", content="Suzii")
-        link(rel="icon", href="/img/favicon.ico", type="image/x-icon")
-        link(rel="shortcut icon", href="/img/favicon.ico", type="image/x-icon")
+        block meta
+
+        link(rel="apple-touch-icon", sizes="180x180", href="/apple-touch-icon.png")
+        link(rel="icon", type="image/png", sizes="32x32", href="/favicon-32x32.png")
+        link(rel="icon", type="image/png", sizes="16x16", href="/favicon-16x16.png")
+        link(rel="manifest", href="/site.webmanifest")
+        link(rel="mask-icon", href="/safari-pinned-tab.svg", color="#00a6fb")
+        link(rel="shortcut icon", href="/favicon.ico")
+        meta(name="msapplication-TileColor", content="#da532c")
+        meta(name="msapplication-config", content="/browserconfig.xml")
+        meta(name="theme-color", content="#ffffff")
+
         title Oooops
         block styles
             link(rel="stylesheet", href="/css/oops.css")

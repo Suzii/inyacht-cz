@@ -3,30 +3,43 @@ const { getItemCached } = require('../utils/cache');
 const { translateAssetUrls } = require('../utils/translateAssetUrls');
 
 const getItem = (codename) => {
-  let query = getDeliveryClient().item(codename);
+  const query = getDeliveryClient().item(codename);
   console.log(`KC-API-query: ${query.toString()}`);
 
   return query
     .get()
     .toPromise()
-    .then(translateAssetUrls);
+    .then(translateAssetUrls)
+    .then(response => {
+      console.info('KC-API-received', codename);
+      return response;
+    });
 };
 
 const getHomepage = () => getItemCached('homepage', () => getItem('homepage'));
 const getAboutUs = () => getItemCached('about_us', () => getItem('about_us'));
 const getContact = () => getItemCached('contact', () => getItem('contact'));
 const getSearch = () => getItemCached('search', () => getItem('search'));
+const getNews = () => getItemCached('news_page', () => getItem('news_page'));
 const getFaq = () => getItemCached('frequently_asked_questions', () => getItem('frequently_asked_questions'));
 const getNewsPost = (codename) => getItemCached(codename, () => getItem(codename));
 
 const getNewsPostsPreviewsKcRequest = () => {
-  console.log('KC API: news previews');
-  return deliveryClient
+  let query = getDeliveryClient()
     .items()
     .type('news_post')
-    .elementsParameter(['p__title', 'p__leading_paragraph', 'p__cover_photo', 'friendly_url', 'published'])
+    .elementsParameter(['p__title', 'p__leading_paragraph', 'p__cover_photo', 'friendly_url', 'published']);
+
+  console.log(`KC-API-query: ${query.toString()}`);
+
+  return query
     .get()
-    .toPromise();
+    .toPromise()
+    // .then(translateAssetUrls)
+    .then(response => {
+      console.info('KC-API-received', newsPostsPreviewsCacheKey);
+      return response
+    });
 };
 
 const newsPostsPreviewsCacheKey = 'NEWS_POSTS_PREVIEWS';
@@ -39,6 +52,7 @@ module.exports = {
   getContact,
   getSearch,
   getFaq,
+  getNews,
   getNewsPost,
   getNewsPostsPreviews,
 };

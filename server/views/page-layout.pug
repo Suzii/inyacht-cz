@@ -1,5 +1,6 @@
 extends html-layout
 include mixins/navLink
+include mixins/footerSitemapLink
 include mixins/social-facebook
 include mixins/social-instagram
 include mixins/social-twitter
@@ -21,6 +22,7 @@ block body
                     +navLink(sitemap.aboutUs)
                     +navLink(sitemap.search)
                     +navLink(sitemap.faq)
+                    +navLink(sitemap.news)
                     +navLink(sitemap.contact)
                     li.hidden-xs
                         +social-facebook(contactData, "header")
@@ -36,16 +38,12 @@ block body
             .container
                 .row.sitemap-row#sitemap.logo-row
                     .col-md-4.col-sm-4.col-xs-12
-                        h4
-                            a(href=sitemap.index.route) #{sitemap.index.menuItem}
-                        h4
-                            a(href=sitemap.aboutUs.route) #{sitemap.aboutUs.menuItem}
-                        h4
-                            a(href=sitemap.search.route) #{sitemap.search.menuItem}
-                        h4
-                            a(href=sitemap.faq.route) #{sitemap.faq.menuItem}
-                        h4
-                            a(href=sitemap.contact.route) #{sitemap.contact.menuItem}
+                        +footerSitemapLink(sitemap.index)
+                        +footerSitemapLink(sitemap.aboutUs)
+                        +footerSitemapLink(sitemap.search)
+                        +footerSitemapLink(sitemap.faq)
+                        +footerSitemapLink(sitemap.news)
+                        +footerSitemapLink(sitemap.contact)
 
                     .col-md-4.col-sm-4.col-xs-12.contact#contact.text-center
                         h4 Kontaktujte nás

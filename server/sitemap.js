@@ -47,7 +47,7 @@ const sitemap = {
   },
   news: {
     id: 'news',
-    route: '/#novinky',
+    route: '/novinky',
     view: 'pages/yachting/news',
     parentRouteId: 'yachting',
     title: 'Novinky',
