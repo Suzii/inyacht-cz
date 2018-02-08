@@ -1,3 +1,3 @@
-require('./cookieConsent');
-require('./navbarShrink');
-require('./positionSmallSearch');
+require('./utils/cookieConsent');
+require('./utils/navbarShrink');
+require('./utils/bookingManagerLoadingAndPositioning');

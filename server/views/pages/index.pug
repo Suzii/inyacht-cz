@@ -1,6 +1,7 @@
 extends ../page-layout
 include ../mixins/newsPostPreview
 include ../mixins/headerMetadata
+include ../mixins/spinner
 
 block append meta
     +headerMetadata(item)
@@ -25,6 +26,7 @@ block content
                         | #{item.coverVideoHeading.value}
 
                     .booking-manager__container--small.text-center
+                        +spinner("white")
                         iframe#booking-manager(
                         width="100%"
                         frameborder="0"

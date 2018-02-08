@@ -1,17 +1,21 @@
 extends ../base-page
+include ../mixins/spinner
 
 block more
-    iframe.booking-manager__container--large#vysledky.navigable-element(
-        width="100%"
-        height="1000"
-        frameborder="0"
-        scrolling="auto"
-        src="https://www.booking-manager.com/wbm2/page.html?companyid=2957&setlang=cs&customCssPath=" + bookingCssLg + "&" + params
-        allowTransparency="true"
-    )
-    br
+    .booking-manager__container--large
+        +spinner()
+        iframe#vysledky.navigable-element(
+            width="100%"
+            height="1000"
+            frameborder="0"
+            scrolling="auto"
+            src="https://www.booking-manager.com/wbm2/page.html?companyid=2957&setlang=cs&customCssPath=" + bookingCssLg + "&" + params
+            allowTransparency="true"
+        )
+        br
 
-    a(
-        href="https://www.booking-manager.com"
-        style="color:#9999;text-decoration:none;font-size:10px;font-family:arial"
-    ) Yacht charter availability powered by booking-manager.com
+        a(
+            href="https://www.booking-manager.com"
+            style="color:#9999;text-decoration:none;font-size:10px;font-family:arial"
+        ) Yacht charter availability powered by booking-manager.com
+
