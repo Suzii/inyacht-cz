@@ -3,25 +3,13 @@ const { getItemCached } = require('../utils/cache');
 const { translateAssetUrls } = require('../utils/translateAssetUrls');
 
 const getItem = (codename) => {
-  console.info(`KC-API-get: '${codename}'`);
   let query = deliveryClient.item(codename);
-
-  console.log(`KC-API query: ${query.toString()}`);
+  console.log(`KC-API-query: ${query.toString()}`);
 
   return query
     .get()
     .toPromise()
-    .then(translateAssetUrls)
-    .then(response => {
-      console.info('KC-API-received: ', codename, response.item.system.last_modified);
-      console.info('KC response', response.debug.rawResponse);
-
-      if (codename === 'frequently_asked_questions') {
-        console.info(`KC-API-FAQ-10 ${response.item.faqs[9].question.value}`);
-      }
-
-      return response;
-    });
+    .then(translateAssetUrls);
 };
 
 const getHomepage = () => getItemCached('homepage', () => getItem('homepage'));
