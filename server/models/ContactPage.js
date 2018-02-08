@@ -68,7 +68,7 @@ class ContactPage extends ContentItem {
 
         return fieldName;
       }),
-      linkResolver: (link) => link.type === 'contact_page' ? link.url_slug : undefined,
+      linkResolver: (link) => link.type === 'contact_page' ? `/${link.url_slug}` : undefined,
     })
   }
 }

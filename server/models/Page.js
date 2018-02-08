@@ -50,7 +50,7 @@ class Page extends ContentItem {
 
         return fieldName;
       }),
-      linkResolver: (link) => link.type === 'page' ? link.url_slug : undefined,
+      linkResolver: (link) => link.type === 'page' ? `/${link.url_slug}` : undefined,
     })
   }
 }

@@ -46,7 +46,7 @@ class FaqPage extends ContentItem {
 
         return fieldName;
       }),
-      linkResolver: (link) => link.type === 'faq_page' ? link.url_slug : undefined,
+      linkResolver: (link) => link.type === 'faq_page' ? `/${link.url_slug}` : undefined,
     })
   }
 }
