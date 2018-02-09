@@ -1,9 +1,9 @@
-const getDeliveryClient = require('./deliveryClient');
+const deliveryClient = require('./deliveryClient');
 const { getItemCached } = require('../utils/cache');
 const { translateAssetUrls } = require('../utils/translateAssetUrls');
 
 const getItem = (codename) => {
-  const query = getDeliveryClient().item(codename);
+  const query = deliveryClient.item(codename);
   console.log(`KC-API-query: ${query.toString()}`);
 
   return query
@@ -25,7 +25,7 @@ const getFaq = () => getItemCached('frequently_asked_questions', () => getItem('
 const getNewsPost = (codename) => getItemCached(codename, () => getItem(codename));
 
 const getNewsPostsPreviewsKcRequest = () => {
-  let query = getDeliveryClient()
+  let query = deliveryClient
     .items()
     .type('news_post')
     .elementsParameter(['p__title', 'p__leading_paragraph', 'p__cover_photo', 'friendly_url', 'published']);

@@ -43,7 +43,7 @@ gulp.task('copy-assets', function () {
 });
 
 gulp.task('copy-pseudo-public', function () {
-  console.log('Copying filder __public__...');
+  console.log('Copying folder __public__...');
   gulp.src('./__public__/**/*')
     .pipe(gulp.dest(OUTPUT_DIR));
 });
