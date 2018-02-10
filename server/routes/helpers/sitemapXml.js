@@ -7,9 +7,10 @@ const sitemapXml = sm.createSitemap ({
   urls: [
     { url: appSitemap.index.route, changefreq: 'weekly', priority: 0.3 },
     { url: appSitemap.aboutUs.route, changefreq: 'weekly',  priority: 0.7 },
-    { url: appSitemap.faq.route, changefreq: 'weekly',  priority: 0.5 },
-    { url: appSitemap.contact.route, changefreq: 'weekly', priority: 0.5 },
     { url: appSitemap.search.route, changefreq: 'weekly', priority: 0.7 },
+    { url: appSitemap.faq.route, changefreq: 'weekly',  priority: 0.5 },
+    { url: appSitemap.news.route, changefreq: 'daily',  priority: 0.5 },
+    { url: appSitemap.contact.route, changefreq: 'weekly', priority: 0.5 },
   ]
 });
 
